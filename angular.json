@@ -24,9 +24,11 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/echarts/dist/echarts.min.js"
+            ]
           },
           "configurations": {
             "production": {

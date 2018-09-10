@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './atoms/button/button.component';
@@ -9,6 +10,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { HomeSectionComponent } from './templates/home-section/home-section.component';
 import { CardComponent } from './atoms/card/card.component';
 import { CardWithIconComponent } from './molecules/card-with-icon/card-with-icon.component';
+import { HeadingComponent } from './atoms/heading/heading.component';
+import { LogoComponent } from './atoms/logo/logo.component';
+import { SectionTurquoiseComponent } from './atoms/section-turquoise/section-turquoise.component';
+import { SectionGrayComponent } from './atoms/section-gray/section-gray.component';
+import { TextComponent } from './atoms/text/text.component';
+import { ChartComponent } from './atoms/chart/chart.component';
 
 
 
@@ -20,13 +27,20 @@ import { CardWithIconComponent } from './molecules/card-with-icon/card-with-icon
     HomeComponent,
     HomeSectionComponent,
     CardComponent,
-    CardWithIconComponent
+    CardWithIconComponent,
+    HeadingComponent,
+    LogoComponent,
+    SectionTurquoiseComponent,
+    SectionGrayComponent,
+    TextComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatToolbarModule
+    MatToolbarModule,
+    NgxEchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

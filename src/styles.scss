@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@font-face {
+  font-family: 'QuarcaBold';
+  src: url("./assets/fonts/QuarcaNormBold.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'QuarcaRegular';
+  src: url("./assets/fonts/QuarcaNormRegular.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'QuarcaMedium';
+  src: url("./assets/fonts/QuarcaNormMedium.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'QuarcaLight';
+  src: url("./assets/fonts/QuarcaNormLight.otf") format('opentype');
+}
