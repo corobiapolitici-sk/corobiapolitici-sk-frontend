@@ -16,6 +16,8 @@ import { SectionTurquoiseComponent } from './atoms/section-turquoise/section-tur
 import { SectionGrayComponent } from './atoms/section-gray/section-gray.component';
 import { TextComponent } from './atoms/text/text.component';
 import { ChartComponent } from './atoms/chart/chart.component';
+import { SelectComponent } from './atoms/select/select.component';
+import { StatisticsComponent } from './molecules/statistics/statistics.component';
 
 
 
@@ -33,7 +35,9 @@ import { ChartComponent } from './atoms/chart/chart.component';
     SectionTurquoiseComponent,
     SectionGrayComponent,
     TextComponent,
-    ChartComponent
+    ChartComponent,
+    SelectComponent,
+    StatisticsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,18 @@
+<div class="main-background">
   <div class="container main-section">
     <div class="row">
-      <div class="curtains">
+      <div class="curtains col-xs-12">
         <app-logo></app-logo>
       </div>
     </div>
   </div>
-
+</div>
 <app-section-turquoise>
-  <div class="row">
+  <div class="row" style="padding-bottom: 30px;">
     <app-heading text="Vízia projektu" style="width: 100%; text-align: center"></app-heading>
-    <app-text style="text-align:center; font-size: 1.5em;">Objektívne ukazovať prácu politikov na zrozumiteľných štatistikách</app-text>
+    <div class="col-lg-12">
+      <app-text style="text-align:center; font-size: 1.5em;">Objektívne ukazovať prácu politikov na zrozumiteľných štatistikách</app-text>
+    </div>
     <app-card-with-icon
       class="col-md-4"
       iconSrc="../../../assets/img/voter.png"
@@ -37,16 +40,26 @@
 <app-section-gray>
   <div class="row">
     <app-heading text="Ukážky štatistík" style="width: 100%; text-align: center"></app-heading>
-    <app-chart></app-chart>
+    <app-statistics></app-statistics>
   </div>
 </app-section-gray>
 
 <app-section-turquoise class="contact-section">
   <div class="row">
     <app-heading text="Kontaktujte nás" style="width: 100%; text-align: center"></app-heading>
-    <app-text>Napíšte nám ak máte záujem o vyhotovenie štatistiky alebo nám chcete niečo
-      povedať. Radi Vám pomôžeme alebo sa necháme inšpirovať.
-    </app-text>
-    <app-text style="font-size: 25px;display: inline-block;">kontakt@corobiapolitici.sk</app-text>
+    <div class="col-xs-12">
+      <app-text style="padding-right: 15px;padding-left: 15px; display: inline-block;">Napíšte nám ak máte záujem o vyhotovenie štatistiky alebo nám chcete niečo
+        povedať. Radi Vám pomôžeme alebo sa necháme inšpirovať.
+      </app-text>
+      <app-text style="font-size: 25px;display: inline-block;">kontakt@corobiapolitici.sk</app-text>
+    </div>
   </div>
 </app-section-turquoise>
+
+<app-section-gray>
+    <div class="row">
+      <div class="col-xs-12">
+        <app-text class="footer-text">corobiapolitici.sk &nbsp;&nbsp; 2018</app-text>
+      </div>
+    </div>
+  </app-section-gray>
