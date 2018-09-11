@@ -1,0 +1,10 @@
+@import "../../_variables.scss";
+select {
+  width: 90%;
+  background: $color-gray;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  margin-left: 5%;
+  margin-right: 5%;
+}
