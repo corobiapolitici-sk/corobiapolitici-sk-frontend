@@ -6,8 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./statistics3.component.scss']
 })
 export class Statistics3Component {
-  selectOptions = [
-    {option: 'smer', name: 'SMER-SD'},
-    {option: 'olano', name: 'OLANO'},
-  ];
+  selectOptions = [];
 }

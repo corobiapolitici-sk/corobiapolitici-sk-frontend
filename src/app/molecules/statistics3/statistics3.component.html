@@ -1,4 +1,16 @@
 <div class="row">
+  <div class="col-md-12">
+    <app-heading text="Celková dĺžka rozpráv poslaneckých klubov (v minútach)" type="h2" class="col-xs-12"></app-heading>
+    <div class="col-xs-12">
+      <app-select id="sel-vis-3" [options]="selectOptions" class="col-xs-12"></app-select>
+      <a href="assets/data/vis_3_klub_poslanec_cas.json" target="_blank">Stiahnúť podklady</a>
+    </div>
+    <div style="height: 400px">
+      <div id="vis-3-a" style="float: left; width: 45%;height:400px"></div>
+      <div id="vis-3-b" style="float: right; width: 45%;height:400px"></div>
+    </div>
+  </div>
+<!--
 <div class="col-md-6">
   <app-heading text="Počet rozpráv za politickú stranu" type="h2" class="col-xs-12"></app-heading>
   <app-text class="col-xs-12">Vyber politickú stranu:</app-text>
@@ -9,4 +21,5 @@
 <div class="col-md-6">
   <app-chart></app-chart>
 </div>
+-->
 </div>
