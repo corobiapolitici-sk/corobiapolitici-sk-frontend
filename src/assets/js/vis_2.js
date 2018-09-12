@@ -90,15 +90,29 @@ function visualizationUpdate2 (data) {
 			formatter: function (params) {
         var lawName = visualization2LawNames[params.data.value[0]]
         var clubName = clubNames[params.data.value[1]]
-        return '<b>' + clubName + '</b> mal <b>' + params.data.value[2] + '</b> rozprav o zákone <b>' + lawName + '</b></br><i>'
+        return 'Klub <b>' + clubName + '</b> strávil <b>' + params.data.value[2] + '</b> minút rozpravách o zákone <b>' + lawName + '</b></br><i>'
           + visualization2Laws[lawName] + '</i>'
       }
 		},
 		xAxis: {
-			data: visualization2LawNames.map(function () {
-        return ''
-      }),
-      show: false
+      name: 'Číslo parlamentnej tlače',
+      nameLocation: 'center',
+      nameTextStyle: {
+        fontFamily: 'QuarcaRegular',
+        fontSize: 16,
+        fontWeight: 'bold'
+      },
+      nameGap: 30,
+			data: visualization2LawNames,
+      axisLine: {
+        lineStyle: {
+          color: 'white'
+        }
+      },
+      axisLabel: {
+        fontFamily: 'QuarcaRegular',
+        fontSize: 14
+      }
     },
 		yAxis: {
       data: clubNames,
