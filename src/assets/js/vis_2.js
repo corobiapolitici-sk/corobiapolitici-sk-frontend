@@ -64,34 +64,34 @@ var visualization2Laws = {
     + 'Slovenskej republiky č. 350/1996 Z. z. o rokovacom poriadku Národnej rady</br>'
     + 'Slovenskej republiky v znení neskorších predpisov, vrátený prezidentom</br>'
     + 'Slovenskej republiky na opätovné prerokovanie Národnou radou Slovenskej republiky'
-}
-var visualization2LawNames = Object.keys(visualization2Laws)
+};
+var visualization2LawNames = Object.keys(visualization2Laws);
 
 function visualizationUpdate2 (data) {
-  var clubNames = Object.keys(data)
+  var clubNames = Object.keys(data);
 
-  var items = clubNames.reduce((acc, clubName, clubNameIndex) => {
-    visualization2LawNames.forEach((lawName, lawNameIndex) => {
+  var items = clubNames.reduce(function (acc, clubName, clubNameIndex) {
+    visualization2LawNames.forEach(function (lawName, lawNameIndex) {
       acc.push({
         label: {
           fontFamily: 'QuarcaRegular',
           fontSize: 14
         },
         value: [lawNameIndex, clubNameIndex, data[clubName][lawName] || '-']
-      })
-    })
-    return acc
-  }, [])
+      });
+    });
+    return acc;
+  }, []);
 
 	return {
     animation: false,
 		tooltip: {
 			position: 'top',
 			formatter: function (params) {
-        var lawName = visualization2LawNames[params.data.value[0]]
-        var clubName = clubNames[params.data.value[1]]
-        return 'Klub <b>' + clubName + '</b> strávil <b>' + params.data.value[2] + '</b> minút rozpravách o zákone <b>' + lawName + '</b></br><i>'
-          + visualization2Laws[lawName] + '</i>'
+        var lawName = visualization2LawNames[params.data.value[0]];
+        var clubName = clubNames[params.data.value[1]];
+        return 'Klub <b>' + clubName + '</b> strávil celkovo <b>' + params.data.value[2] + '</b> minút v rozpravách o parlamentnej tlači č. <b>' + lawName + '</b></br><i>'
+          + visualization2Laws[lawName] + '</i>';
       }
 		},
 		xAxis: {
@@ -149,12 +149,12 @@ function visualizationUpdate2 (data) {
 				}
 			}
 		}]
-	}
+	};
 }
 
 function visualizationClickHandler2 (params) {
   if (params.data.value[2] !== '-') {
     window.open('https://www.nrsr.sk/web/Default.aspx?sid=zakony%2Fzakon&ZakZborID=13&CisObdobia=7&CPT='
-      + visualization2LawNames[params.data.value[0]], '_blank')
+      + visualization2LawNames[params.data.value[0]], '_blank');
   }
 }

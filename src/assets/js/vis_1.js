@@ -4,10 +4,10 @@ var visualization1Colors = {
   "Proti":'#ff6a4d',
   "Za": '#5bd778',
   "Zdržal/a sa":'#ffd24d'
-}
+};
 
 function visualizationUpdate1A (data, selection) {
-	var item = data[selection]['koalícia']
+	var item = data[selection]['koalícia'];
 
 	return {
 		title : {
@@ -38,10 +38,10 @@ function visualizationUpdate1A (data, selection) {
           itemStyle: {
             color: visualization1Colors[key]
           }
-				}
+				};
 			})
 		}]
-	}
+	};
 }
 
 function visualizationUpdate1B (data, selection) {
