@@ -16,7 +16,7 @@ function visualizationUpdate1A (data, selection) {
       textStyle: {
         color: 'white',
         fontFamily: 'QuarcaRegular',
-        fontSize: 20
+        fontSize: 18
       }
 		},
 		tooltip: {
@@ -33,7 +33,7 @@ function visualizationUpdate1A (data, selection) {
           name: key,
           label: {
             fontFamily: 'QuarcaRegular',
-            fontSize: 14
+            fontSize: 13
           },
           itemStyle: {
             color: visualization1Colors[key]
@@ -54,7 +54,7 @@ function visualizationUpdate1B (data, selection) {
       textStyle: {
         color: 'white',
         fontFamily: 'QuarcaRegular',
-        fontSize: 20
+        fontSize: 18
       }
 		},
 		tooltip: {
@@ -71,7 +71,7 @@ function visualizationUpdate1B (data, selection) {
 					name: key,
           label: {
             fontFamily: 'QuarcaRegular',
-            fontSize: 14
+            fontSize: 13
           },
           itemStyle: {
             color: visualization1Colors[key]

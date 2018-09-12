@@ -14,7 +14,7 @@ function visualizationUpdate3A (data, selection) {
 		},
     grid: {
       right: '0%',
-      left: '15%'
+      left: '18%'
     },
 		tooltip: {
 			trigger: 'item',
@@ -86,7 +86,7 @@ function visualizationUpdate3B (data, selection) {
     },
     grid: {
       right: '0%',
-      left: '15%'
+      left: '18%'
     },
 		tooltip: {
 			trigger: 'item',
