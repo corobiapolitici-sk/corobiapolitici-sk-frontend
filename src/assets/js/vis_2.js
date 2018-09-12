@@ -111,7 +111,7 @@ function visualizationUpdate2 (data) {
       },
       axisLabel: {
         fontFamily: 'QuarcaRegular',
-        fontSize: 14
+        fontSize: 13
       }
     },
 		yAxis: {
@@ -123,7 +123,7 @@ function visualizationUpdate2 (data) {
       },
       axisLabel: {
         fontFamily: 'QuarcaRegular',
-        fontSize: 14
+        fontSize: 13
       }
 		},
 		visualMap: {
