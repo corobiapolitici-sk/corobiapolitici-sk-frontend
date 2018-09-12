@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-statistics',
-  templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.scss']
+  selector: 'app-statistics-3',
+  templateUrl: './statistics3.component.html',
+  styleUrls: ['./statistics3.component.scss']
 })
-export class StatisticsComponent {
+export class Statistics3Component {
   selectOptions = [
     {option: 'smer', name: 'SMER-SD'},
     {option: 'olano', name: 'OLANO'},
