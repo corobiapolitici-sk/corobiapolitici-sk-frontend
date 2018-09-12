@@ -2,21 +2,40 @@ function visualizationUpdate3A (data, selection) {
 	var item = data[selection]
 
 	return {
+    color: '#00a9a6',
 		title: {
 			text: 'poslanecký klub: ' + selection,
-			x: 'center'
+			x: 'center',
+      textStyle: {
+        color: 'white',
+        fontFamily: 'QuarcaRegular',
+        fontSize: 20
+      }
 		},
 		tooltip: {
 			trigger: 'item',
-			formatter: "{a} <br/>{b} : {c} minút"
+			formatter: "{b} : {c} minút"
 		},
 		xAxis: {
-			data: Object.keys(item)
-		},
-		yAxis: {},
+			data: Object.keys(item).map(function () {
+        return ''
+      }),
+      axisLine: {
+        lineStyle: {
+          color: 'white'
+        }
+      }
+    },
+		yAxis: {
+      axisLine: {
+        lineStyle: {
+          color: 'white'
+        }
+      }
+    },
 		series: [{
 			name: 'poslanecký klub: ' + selection,
-			type: 'bar',
+      type: 'bar',
 			data: Object.keys(item).map(function (key) {
 				return {
 					value: item[key],
@@ -27,7 +46,7 @@ function visualizationUpdate3A (data, selection) {
 	}
 }
 
-function visualizationUpdate3B (data) {
+function visualizationUpdate3B (data, selection) {
 	var item = {}
 	Object.keys(data).forEach((key) => {
 		item[key] = Object.keys(data[key]).reduce((acc, name) => {
@@ -36,26 +55,53 @@ function visualizationUpdate3B (data) {
 	})
 
 	return {
+    color: '#00a9a6',
 		title: {
 			text: 'všetky poslanecké kluby',
-			x: 'center'
+			x: 'center',
+      textStyle: {
+        color: 'white',
+        fontFamily: 'QuarcaRegular',
+        fontSize: 20
+      }
 		},
 		tooltip: {
 			trigger: 'item',
-			formatter: "{a} <br/>{b} : {c} minút"
+			formatter: "{b} : {c} minút"
 		},
 		xAxis: {
-			data: Object.keys(item)
-		},
-		yAxis: {},
+			data: Object.keys(item).map(function () {
+        return ''
+      }),
+      axisLine: {
+        lineStyle: {
+          color: 'white'
+        }
+      }
+    },
+		yAxis: {
+      axisLine: {
+        lineStyle: {
+          color: 'white'
+        }
+      }
+    },
 		series: [{
 			name: 'všetky poslanecké kluby',
 			type: 'bar',
 			data: Object.keys(item).map(function (key) {
-				return {
+				var result = {
 					value: item[key],
 					name: key
-				}
+        }
+
+        if (selection === key) {
+          result.itemStyle = {
+            color: 'white'
+          }
+        }
+
+        return result
 			})
 		}]
 	}

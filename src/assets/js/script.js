@@ -54,20 +54,34 @@ $(document).ready(function () {
 			))
 		},
 		function updateVisualization2 () {
-			echartElements['vis-2'].setOption(visualizationUpdate2(data['vis_2_klub_zakon_rozprava']))
+      echartElements['vis-2'].setOption(visualizationUpdate2(data['vis_2_klub_zakon_rozprava']))
+      echartElements['vis-2'].on('click', visualizationClickHandler2)
     },
 		function updateVisualization3 () {
 			echartElements['vis-3-a'].setOption(visualizationUpdate3A(
 				data['vis_3_klub_poslanec_cas'],
 				selectElements['sel-vis-3'].val()
 			))
-			echartElements['vis-3-b'].setOption(visualizationUpdate3B(data['vis_3_klub_poslanec_cas']))
+			echartElements['vis-3-b'].setOption(visualizationUpdate3B(
+        data['vis_3_klub_poslanec_cas'],
+        selectElements['sel-vis-3'].val()
+      ))
+      echartElements['vis-3-b'].on('click', function (params) {
+        selectElements['sel-vis-3'].val(params.data.name)
+        selectElements['sel-vis-3'].change()
+      })
     }
 	]
 
 	visualizationUpdates.forEach(function (visualizationUpdate) {
 		visualizationUpdate()
-	})
+  })
+
+  $(window).on('resize', function () {
+    visualizationUpdates.forEach(function (visualizationUpdate) {
+      visualizationUpdate()
+    })
+  })
 
 	selectElements['sel-vis-1'].change(visualizationUpdates[0])
   selectElements['sel-vis-3'].change(visualizationUpdates[2])
