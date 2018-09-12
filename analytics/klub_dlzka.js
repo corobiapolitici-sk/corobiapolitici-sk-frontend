@@ -2,18 +2,18 @@ const fs = require('fs')
 
 const result = {}
 
-const data = fs.readFileSync('politici_rozpravy.csv', 'utf-8')
+const data = fs.readFileSync('klub_dlzka.csv', 'utf-8')
 	.split('\n')
 	.slice(1, -1)
 	.map((line) => {
 		const fields = line.split(',')
 
 		const item = {
-			klub: fields[0],
-			meno: fields[1],
-			cas: parseInt(fields[2], 10)
+			klub: fields[2],
+			meno: fields[0],
+			cas: parseInt(fields[1], 10)
 		}
-
+/*
 		switch (item.klub) {
 			case '(OĽANO)':
 				item.klub = '(OĽaNO)'
@@ -28,16 +28,17 @@ const data = fs.readFileSync('politici_rozpravy.csv', 'utf-8')
 				item.klub = '(-)'
 				break
 		}
+*/
 
-		item.klub = item.klub.substring(1, item.klub.length - 1)
-		if (item.klub === '-') {
-			for (const [klub, names] of Object.entries(result)) {
-				if (new Set(Object.keys(names)).has(item.meno)) {
-					item.klub = klub
-					break
-				}
-			}
-		}
+		// item.klub = item.klub.substring(1, item.klub.length - 1)
+		// if (item.klub === '-') {
+    for (const [klub, names] of Object.entries(result)) {
+      if (new Set(Object.keys(names)).has(item.meno)) {
+        item.klub = klub
+        break
+      }
+    }
+		// }
 
     if (result[item.klub] === undefined) {
       result[item.klub] = {}
