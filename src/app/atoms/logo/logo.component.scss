@@ -9,7 +9,6 @@ div {
   padding-top: 24px;
   padding-bottom: 20px;
   display: inline-block;
-  text-align: center;
   width: 100%;
 }
 
@@ -17,8 +16,6 @@ h1 {
   color: $color-gray;
   text-transform: uppercase;
   font-family: $font-regular;
-  margin-top: 70px;
-  margin-bottom: 70px;
   opacity: 1;
   font-size: 2rem;
 }
@@ -32,4 +29,18 @@ h1 {
   border-bottom: 2px solid  $color-gray;
   padding-bottom: 6px;
   padding-top: 4px;
+}
+
+@media(max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    margin-top: 50px;
+  }
+}
+
+@media(min-width: 480px) {
+  h1 {
+    font-size: 4rem;
+    margin-top: 150px;
+  }
 }
