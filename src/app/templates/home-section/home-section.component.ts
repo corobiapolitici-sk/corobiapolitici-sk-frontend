@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Apollo} from 'apollo-angular';
+import gql from 'graphql-tag';
 
 @Component({
   selector: 'app-home-section',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeSectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apollo: Apollo) { }
 
   ngOnInit() {
+    this.apollo
+      .watchQuery({
+        query: gql`
+        {
+          user(id: 5) {
+            firstName
+            lastName
+          }
+        }
+        `,
+      })
+      .valueChanges.subscribe(result => {
+        console.log(result);
+
+      });
   }
 
 }
