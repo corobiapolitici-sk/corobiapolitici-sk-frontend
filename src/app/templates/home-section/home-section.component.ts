@@ -16,9 +16,8 @@ export class HomeSectionComponent implements OnInit {
       .watchQuery({
         query: gql`
         {
-          user(id: 5) {
-            firstName
-            lastName
+          Technology {
+            name
           }
         }
         `,

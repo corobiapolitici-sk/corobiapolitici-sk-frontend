@@ -17,17 +17,9 @@ import { SectionGrayComponent } from './atoms/section-gray/section-gray.componen
 import { TextComponent } from './atoms/text/text.component';
 import { ChartComponent } from './atoms/chart/chart.component';
 import { SelectComponent } from './atoms/select/select.component';
-<<<<<<< Updated upstream
-import { StatisticsComponent } from './molecules/statistics/statistics.component';
-
-
-=======
-import { Statistics1Component } from './molecules/statistics1/statistics1.component';
-import { Statistics2Component } from './molecules/statistics2/statistics2.component';
-import { Statistics3Component } from './molecules/statistics3/statistics3.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
->>>>>>> Stashed changes
+import { StatisticsComponent } from './molecules/statistics/statistics.component';
 
 @NgModule({
   declarations: [
