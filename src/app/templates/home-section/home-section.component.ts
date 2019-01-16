@@ -16,8 +16,21 @@ export class HomeSectionComponent implements OnInit {
       .watchQuery({
         query: gql`
         {
-          Technology {
-            name
+          Poslanec {
+         id,
+        titul,
+        priezvisko,
+        email,
+        bydlisko,
+        fotografia,
+        kandidovalZa,
+        kraj,
+        url,
+        meno,
+            klub {
+              id,
+              pocetPoslancov
+            }
           }
         }
         `,
