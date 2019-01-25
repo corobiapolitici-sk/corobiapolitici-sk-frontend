@@ -1,0 +1,34 @@
+MATCH (c:Poslanec) WHERE c.narodnost IS NULL SET c.narodnost = c.národnosť REMOVE c.národnosť
+narodený
+
+MATCH (c:Klub) WHERE c.pocetPoslancov IS NULL SET c.pocetPoslancov = c.početPoslancov REMOVE c.početPoslancov
+
+
+deňSchôdze
+dátumDoručenia
+dátumPodania
+navrhovateľ
+národnosť
+názov
+názovHlasovania
+súhrnHlasujúcich
+súhrnNehlasovalo
+súhrnNeprítomní
+súhrnProti
+súhrnPrítomní
+súhrnZa
+súhrnZdržalo
+typVystúpenia
+typČlenstva
+výsledok
+výsledokHlasovania
+záznamRokovania
+záznamVystúpenia
+časHlasovania
+časKoniec
+časNaposledy
+časZačiatok
+časťDňaSchôdze
+čísloHlasovania
+čísloObdobia
+čísloSchôdze
