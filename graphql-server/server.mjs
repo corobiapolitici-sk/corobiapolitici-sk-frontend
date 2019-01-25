@@ -22,6 +22,67 @@ type Klub {
   id: ID
   pocetPoslancov: Int
 }
+
+type Zmena {
+  id: ID
+  dokument: String
+  datumPodania: DateTime
+  nazov: String
+  url: String
+  cisloObdobia: Int
+  cisloSchodze: Int
+}
+
+type Hlasovanie {
+  id: ID
+  idZakZbor: Int
+  nazovHlasovania: String
+  suhrnHlasujucich: Int
+  suhrnNehlasovalo: Int
+  suhrnNepritomni: Int
+  suhrnProti: Int
+  suhrnPritomni: Int
+  suhrnZa: Int
+  suhrnZdrzalo: Int
+  url: String
+  vysledokHlasovania: String
+  casHlasovania: DateTime
+  cisloHlasovania: Int
+  cisloObdobia: Int
+  cisloSchodze: Int
+}
+
+type Rozprava {
+  id: ID
+  text: String
+  typVystupenia: String
+  url: String
+  zaznamRokovania: String
+  zaznamVystupenia: String
+  casKoniec: DateTime
+  casZaciatok: DateTime
+  castDnaSchodze: String
+  cisloSchodze: Int
+  denSchodze: DateTime
+}
+
+type Spektrum {
+  id: ID
+}
+
+type Vybor {
+  id: ID
+}
+
+type Zakon {
+  id: ID
+  druh: String
+  datumDorucenia: DateTime
+  nazov: String
+  stav: String
+  url: String
+  vysledok: String
+}
 `;
 
 const schema = makeAugmentedSchema({ typeDefs });
