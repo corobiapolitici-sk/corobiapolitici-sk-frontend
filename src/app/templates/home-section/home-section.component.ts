@@ -17,16 +17,16 @@ export class HomeSectionComponent implements OnInit {
         query: gql`
         {
           Poslanec {
-         id,
-        titul,
-        priezvisko,
-        email,
-        bydlisko,
-        fotografia,
-        kandidovalZa,
-        kraj,
-        url,
-        meno,
+            id,
+            titul,
+            priezvisko,
+            email,
+            bydlisko,
+            fotografia,
+            kandidovalZa,
+            kraj,
+            url,
+            meno,
             klub {
               id,
               pocetPoslancov

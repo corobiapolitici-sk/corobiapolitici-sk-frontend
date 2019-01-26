@@ -1,9 +1,6 @@
 MATCH (c:Poslanec) WHERE c.narodnost IS NULL SET c.narodnost = c.národnosť REMOVE c.národnosť
-
 MATCH (c:Poslanec) WHERE c.narodeny IS NULL SET c.narodeny = c.narodený REMOVE c.narodený
-
 MATCH (c:Klub) WHERE c.pocetPoslancov IS NULL SET c.pocetPoslancov = c.početPoslancov REMOVE c.početPoslancov
-
 MATCH (c:Rozprava) WHERE c.denSchodze IS NULL SET c.denSchodze = c.deňSchôdze REMOVE c.deňSchôdze
 MATCH (c:Zakon) WHERE c.datumDorucenia IS NULL SET c.datumDorucenia = c.dátumDoručenia REMOVE c.dátumDoručenia
 MATCH (c:Zmena) WHERE c.datumPodania IS NULL SET c.datumPodania = c.dátumPodania REMOVE c.dátumPodania
@@ -18,6 +15,7 @@ MATCH (c:Hlasovanie) WHERE c.suhrnZa IS NULL SET c.suhrnZa = c.súhrnZa REMOVE c
 MATCH (c:Hlasovanie) WHERE c.suhrnZdrzalo IS NULL SET c.suhrnZdrzalo = c.súhrnZdržalo REMOVE c.súhrnZdržalo
 MATCH (c:Rozprava) WHERE c.typVystupenia IS NULL SET c.typVystupenia = c.typVystúpenia REMOVE c.typVystúpenia
 MATCH (c:Zakon) WHERE c.vysledok IS NULL SET c.vysledok = c.výsledok REMOVE c.výsledok
+MATCH (c:Zakon) WHERE c.nazov IS NULL SET c.nazov = c.názov REMOVE c.názov
 MATCH (c:Hlasovanie) WHERE c.vysledokHlasovania IS NULL SET c.vysledokHlasovania = c.výsledokHlasovania REMOVE c.výsledokHlasovania
 MATCH (c:Rozprava) WHERE c.zaznamRokovania IS NULL SET c.zaznamRokovania = c.záznamRokovania REMOVE c.záznamRokovania
 MATCH (c:Rozprava) WHERE c.zaznamVystupenia IS NULL SET c.zaznamVystupenia = c.záznamVystúpenia REMOVE c.záznamVystúpenia

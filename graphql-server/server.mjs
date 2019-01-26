@@ -15,12 +15,21 @@ type Poslanec {
   kraj: String
   url: String!
   meno: String!
-  klub: Klub @relation(name:"Clen", , direction:OUT)
+  klub: Klub @relation(name:"Clen", direction:OUT)
+  navrhnuteZmeny: [Zmena] @relation(name:"Navrhol", direction:OUT)
+  navrhnuteZakony: [Zakon] @relation(name:"Navrhol", direction:OUT)
+  vybor: Vybor @relation(name:"Clen", direction:OUT)
+  vystupil: [Rozprava] @relation(name:"Vystupil", direction:OUT)
+  hlasovania: [Hlasovanie] @relation(name:"Hlasoval", direction:OUT)
+  delegacie: [Delegacia] @relation(name:"Clen", direction:OUT)
 }
 
 type Klub {
   id: ID
   pocetPoslancov: Int
+  poslanci: [Poslanec] @relation(name:"Clen", direction:IN)
+  byvaliPoslanci: [Poslanec] @relation(name:"BolClenom", direction:IN)
+  spektrum: [Spektrum] @relation(name:"Clen", direction:OUT)
 }
 
 type Zmena {
@@ -31,6 +40,9 @@ type Zmena {
   url: String
   cisloObdobia: Int
   cisloSchodze: Int
+  zakon: Zakon @relation(name:"Navrhnuta", direction:OUT)
+  navrhliPoslanci: [Poslanec] @relation(name:"Navrhol", direction:IN)
+  hlasovania: [Hlasovanie] @relation(name:"HlasovaloO", direction:OUT)
 }
 
 type Hlasovanie {
@@ -50,6 +62,9 @@ type Hlasovanie {
   cisloHlasovania: Int
   cisloObdobia: Int
   cisloSchodze: Int
+  zmena: Zmena @relation(name:"HlasovaloO", direction:IN)
+  poslanci: [Poslanec] @relation(name:"Hlasoval", direction:IN)
+  zakon: Zakon @relation(name:"HlasovaloO", direction:OUT)
 }
 
 type Rozprava {
@@ -63,15 +78,22 @@ type Rozprava {
   casZaciatok: DateTime
   castDnaSchodze: String
   cisloSchodze: Int
-  denSchodze: DateTime
+  denSchodze: Int
+  poslanec: [Poslanec] @relation(name:"Vystupil", direction:IN)
+  zakon: Zakon @relation(name:"TykalaSa", direction:OUT)
 }
 
 type Spektrum {
   id: ID
+  kluby: [Klub] @relation(name:"Clen", direction:IN)
+  zakony: [Zakon] @relation(name:"Navrhol", direction:OUT)
 }
 
 type Vybor {
   id: ID
+  navrhnuteZakony: [Zakon] @relation(name:"Navrhnuty", direction:OUT)
+  gestorovaneZakony: [Zakon] @relation(name:"Gestorsky", direction:OUT)
+  poslanci: [Poslanec] @relation(name:"Clen", direction:IN)
 }
 
 type Zakon {
@@ -82,6 +104,18 @@ type Zakon {
   stav: String
   url: String
   vysledok: String
+  rozpravy: [Rozprava] @relation(name:"TykalaSa", direction:IN)
+  vyboryNavrhol: [Vybor] @relation(name:"Navrhnuty", direction:IN)
+  vyboryGestorsky: [Vybor] @relation(name:"Gestorsky", direction:IN)
+  navrhliPoslanci: [Poslanec] @relation(name:"Navrhol", direction:IN)
+  podpisaliPoslanci: [Poslanec] @relation(name:"Podpisal", direction:IN)
+  hlasovania: [Hlasovanie] @relation(name:"HlasovaloO", direction:IN)
+  spektrum: Spektrum @relation(name:"Navrhol", direction:IN)
+}
+
+type Delegacia {
+  id: ID
+  poslanci: [Poslanec] @relation(name:"Clen", direction:IN)
 }
 `;
 
