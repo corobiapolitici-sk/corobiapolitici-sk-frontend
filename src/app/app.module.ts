@@ -1,7 +1,10 @@
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { HttpLink, HttpLinkModule } from 'apollo-angular-link-http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './atoms/button/button.component';
@@ -17,9 +20,8 @@ import { SectionGrayComponent } from './atoms/section-gray/section-gray.componen
 import { TextComponent } from './atoms/text/text.component';
 import { ChartComponent } from './atoms/chart/chart.component';
 import { SelectComponent } from './atoms/select/select.component';
+import { HttpClientModule } from '@angular/common/http';
 import { StatisticsComponent } from './molecules/statistics/statistics.component';
-
-
 
 @NgModule({
   declarations: [
@@ -44,9 +46,23 @@ import { StatisticsComponent } from './molecules/statistics/statistics.component
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
-    NgxEchartsModule
+    NgxEchartsModule,
+    HttpClientModule,
+    ApolloModule,
+    HttpLinkModule
   ],
-  providers: [],
+  providers: [{
+    provide: APOLLO_OPTIONS,
+    useFactory(httpLink: HttpLink) {
+      return {
+        cache: new InMemoryCache(),
+        link: httpLink.create({
+          uri: 'http://localhost:3003/graphql'
+        })
+      };
+    },
+    deps: [HttpLink],
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
