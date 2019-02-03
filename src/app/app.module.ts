@@ -1,10 +1,14 @@
+import { PoliticiansComponent } from './pages/politicians/politicians.component';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink, HttpLinkModule } from 'apollo-angular-link-http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
+import { MatIconModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './atoms/button/button.component';
@@ -22,6 +26,19 @@ import { ChartComponent } from './atoms/chart/chart.component';
 import { SelectComponent } from './atoms/select/select.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StatisticsComponent } from './molecules/statistics/statistics.component';
+import { HeaderComponent } from './organisms/header/header.component';
+import { NavLinksComponent } from './organisms/header/nav-links/nav-links.component';
+import { ClubsComponent } from './pages/clubs/clubs.component';
+import { InfoComponent } from './pages/info/info.component';
+import { ContactComponent } from './pages/contact/contact.component';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeSectionComponent },
+  { path: 'politicians', component: PoliticiansComponent },
+  { path: 'clubs', component: ClubsComponent },
+  { path: 'info', component: InfoComponent },
+  { path: 'contact', component: ContactComponent },
+];
 
 @NgModule({
   declarations: [
@@ -40,16 +57,29 @@ import { StatisticsComponent } from './molecules/statistics/statistics.component
     ChartComponent,
     SelectComponent,
     StatisticsComponent,
+    HeaderComponent,
+    PoliticiansComponent,
+    NavLinksComponent,
+    ClubsComponent,
+    InfoComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
     NgxEchartsModule,
     HttpClientModule,
     ApolloModule,
-    HttpLinkModule
+    HttpLinkModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    RouterModule.forRoot(
+      appRoutes,
+    ),
   ],
   providers: [{
     provide: APOLLO_OPTIONS,
