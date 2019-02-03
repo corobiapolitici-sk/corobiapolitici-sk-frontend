@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+
+  <span>Čorobiapolitici?</span>
+  <span class="example-spacer"></span>
+  <div fxShow="true" fxHide.lt-md="true">
+    <app-nav-links></app-nav-links>
+  </div>
+  <div fxShow="true" fxHide.gt-sm="true">
+    <a href="#" (click)="sidenav.toggle()">Show Side Menu</a>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container fxFlexFill class="example-container">
+  <mat-sidenav #sidenav fxLayout="column">
+    <div fxLayout="column">
+
+      <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
+      <app-nav-links></app-nav-links>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content fxFlexFill><ng-content></ng-content></mat-sidenav-content>
+</mat-sidenav-container>
