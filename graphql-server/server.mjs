@@ -5,7 +5,7 @@ const { v1 : neo4j } = require('neo4j-driver');
 
 const typeDefs = `
 type Poslanec {
-  id: ID!
+  id: Int!
   titul: String
   priezvisko: String!
   email: String

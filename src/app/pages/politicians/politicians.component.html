@@ -1,3 +1,10 @@
-<p>
-  politicians works!
-</p>
+<h1>Všetci poslanci:</h1>
+<ul *ngIf="politicians$ | async as politicians; else loading">
+  <app-politician-list-item
+    *ngFor="let politician of politicians"
+    [politician]="politician"
+  ></app-politician-list-item>
+</ul>
+<ng-template #loading>
+  <app-loading-indicator></app-loading-indicator>
+</ng-template>
