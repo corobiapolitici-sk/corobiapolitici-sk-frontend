@@ -7,7 +7,6 @@ import { MatIconModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, Ma
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -31,11 +30,19 @@ import { NavLinksComponent } from './organisms/header/nav-links/nav-links.compon
 import { ClubsComponent } from './pages/clubs/clubs.component';
 import { InfoComponent } from './pages/info/info.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ClubComponent } from './pages/clubs/club/club.component';
+import { PoliticianComponent } from './pages/politicians/politician/politician.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoadingErrorIndicatorComponent } from './atoms/loading-error-indicator/loading-error-indicator.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PoliticianListItemComponent } from './organisms/politician-list-item/politician-list-item.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeSectionComponent },
   { path: 'politicians', component: PoliticiansComponent },
+  { path: 'politicians/:id', component: PoliticianComponent },
   { path: 'clubs', component: ClubsComponent },
+  { path: 'clubs/:index', component: ClubComponent },
   { path: 'info', component: InfoComponent },
   { path: 'contact', component: ContactComponent },
 ];
@@ -63,6 +70,10 @@ const appRoutes: Routes = [
     ClubsComponent,
     InfoComponent,
     ContactComponent,
+    ClubComponent,
+    PoliticianComponent,
+    LoadingErrorIndicatorComponent,
+    PoliticianListItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,12 +82,13 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
     NgxEchartsModule,
     HttpClientModule,
     ApolloModule,
     HttpLinkModule,
     BrowserAnimationsModule,
-    FlexLayoutModule,
     RouterModule.forRoot(
       appRoutes,
     ),

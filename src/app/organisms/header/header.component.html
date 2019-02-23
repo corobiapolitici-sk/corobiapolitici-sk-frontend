@@ -10,13 +10,12 @@
   </div>
 </mat-toolbar>
 
-<mat-sidenav-container fxFlexFill class="example-container">
-  <mat-sidenav #sidenav fxLayout="column">
-    <div fxLayout="column">
-
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav>
+    <div>
       <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
       <app-nav-links></app-nav-links>
     </div>
   </mat-sidenav>
-  <mat-sidenav-content fxFlexFill><ng-content></ng-content></mat-sidenav-content>
+  <mat-sidenav-content><ng-content></ng-content></mat-sidenav-content>
 </mat-sidenav-container>
