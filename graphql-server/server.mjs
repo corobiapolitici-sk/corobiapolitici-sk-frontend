@@ -122,8 +122,8 @@ type Delegacia {
 const schema = makeAugmentedSchema({ typeDefs });
 
 const driver = neo4j.driver(
-  'bolt://localhost:11001',
-  neo4j.auth.basic('neo4j', 'skuska')
+  'bolt://localhost:11001', // TODO SETUP: 'bolt://localhost:7687',
+  neo4j.auth.basic('neo4j', 'skuska') // TODO SETUP: neo4j.auth.basic('neo4j', 'h6u4%kr')
 );
 
 const server = new ApolloServer({
@@ -133,6 +133,6 @@ const server = new ApolloServer({
   }
 });
 
-server.listen(3003).then(({ url }) => {
+server.listen(3003).then(({ url }) => { // TODO SETUP: server.listen(3003, '157.230.123.68').then(({ url }) => {
   console.log(`GraphQL API ready at ${url}`);
 });

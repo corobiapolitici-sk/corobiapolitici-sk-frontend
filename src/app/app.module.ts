@@ -109,7 +109,7 @@ const appRoutes: Routes = [
       return {
         cache: new InMemoryCache(),
         link: httpLink.create({
-          uri: 'http://localhost:3003/graphql'
+          uri: 'http://localhost:3003/graphql' // TODO SETUP: uri: 'http://157.230.123.68:3003/graphql'
         })
       };
     },
