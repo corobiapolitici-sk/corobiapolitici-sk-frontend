@@ -1,0 +1,23 @@
+:host {
+  width: 100%;
+}
+
+@media(max-width: 480px) {
+  #vis-2 {
+    height: 400px;
+    width: 700px;
+    display: inline;
+  }
+
+  .g-2-wrapper {
+    width: 300px;
+    overflow-x: scroll;
+    display: inline-block;
+  }
+}
+
+@media(min-width: 480px) {
+  #vis-2 {
+    height: 400px;
+  }
+}

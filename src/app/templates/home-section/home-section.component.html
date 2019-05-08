@@ -3,38 +3,40 @@
     <div class="row">
       <div class="curtains col-xs-12">
         <app-logo></app-logo>
+        <!-- div class="mission">Poukazujeme na prácu politikov zverejňovaním štatistík z verejne dostupných zdrojov</div -->
       </div>
     </div>
   </div>
 </div>
 <app-section-turquoise>
-  <div class="row" style="padding-bottom: 30px;">
+  <div class="row" style="padding-bottom: 30px;"><!-- div class="row" style="padding-bottom: 50px;" -->
     <app-heading text="Vízia projektu" style="width: 100%; text-align: center"></app-heading>
+    <!-- app-heading text="Vízia projektu" style="width: 100%; text-align: center;margin-top: 30px;"></app-heading -->
     <div class="col-lg-12">
       <app-text style="text-align:center; font-size: 1.5em;">
         Objektívne ukazovať prácu politikov na zrozumiteľných štatistikách pre nasledujúce skupiny
+        <!--
+        Vytvárame politický portál umožňujúci lepšie pochopenie práce politikov u širokej verejnosti zobrazovaním zrozumiteľných analýz a faktov kombinovaním viacerých zdrojov.
+        -->
       </app-text>
     </div>
     <app-card-with-icon
       class="col-md-4"
       iconSrc="../../../assets/img/voter.png"
       [title]="'Voliči'"
-      [text]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam'"
+      [text]="'Portál umožní občanom urobiť si čo najobjektívnejší obraz o práci politikov a politických strán.'"
     ></app-card-with-icon>
     <app-card-with-icon
       class="col-md-4"
       iconSrc="../../../assets/img/writer.png"
       [title]="'Novinári'"
-      [text]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam' "
+      [text]="'Portál bude pre novinárov spoľahlivým zdrojom informácií a zjednoduší im spracovanie a analýzu údajov.'"
     ></app-card-with-icon>
     <app-card-with-icon
       class="col-md-4"
       iconSrc="../../../assets/img/politician.png"
       [title]="'Politici'"
-      [text]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam' "
+      [text]="'Portál propaguje aktívnych politikov zobrazovaním merateľných výsledkov ich práce.'"
     ></app-card-with-icon>
   </div>
 </app-section-turquoise>
@@ -43,25 +45,38 @@
   <div class="row">
     <app-heading text="Ukážky štatistík" style="width: 100%; text-align: center"></app-heading>
     <app-statistics></app-statistics>
+    <!--
+    <app-statistics-1 style="margin-top: 50px;"></app-statistics-1>
+    <app-statistics-2 style="margin-top: 50px;"></app-statistics-2>
+    <app-statistics-3 style="margin-top: 50px;"></app-statistics-3>
+
+    <app-text style="text-align:center; font-size: 1.1em;margin-top: 20px; margin-bottom: 40px;">
+      Dáta boli získané strojovým spracovaním verejne dostupných stránok <a target="_blank" href="https://www.nrsr.sk/web/">www.nrsr.sk</a>. Pre novinárov vieme na vyžiadanie poskytnúť aj ďalšie štatistiky.
+    </app-text>
+    -->
   </div>
 </app-section-gray>
 
 <app-section-turquoise class="contact-section">
   <div class="row">
     <app-heading text="Kontaktujte nás" style="width: 100%; text-align: center"></app-heading>
+    <!-- app-heading text="Kontaktujte nás" style="width: 100%; text-align: center;margin-top: 30px;"></app-heading -->
     <div class="col-xs-12">
-      <app-text style="padding-right: 15px;padding-left: 15px; display: inline-block;">Napíšte nám ak máte záujem o vyhotovenie štatistiky alebo nám chcete niečo
-        povedať. Radi Vám pomôžeme alebo sa necháme inšpirovať.
-      </app-text>
+      <app-text style="padding-right: 15px;padding-left: 15px; display: inline-block;">Napíšte nám ak máte záujem o vyhotovenie štatistiky alebo nám chcete niečo povedať. Radi Vám pomôžeme alebo sa necháme inšpirovať.</app-text>
+      <!-- app-text style="padding-right: 15px;padding-left: 15px; display: inline-block;">Neváhajte nás kontaktovať so spätnou väzbou alebo v prípade záujmu o vyhotovenie štatistík.</app-text -->
       <app-text style="font-size: 25px;display: inline-block;">kontakt@corobiapolitici.sk</app-text>
+      <!-- app-text style="font-size: 25px;display: inline-block;margin-bottom: 30px;">
+        <a style="color: white" target="_blank" href="mailto:kontakt@corobiapolitici.sk">kontakt@corobiapolitici.sk</a>
+      </app-text -->
     </div>
   </div>
 </app-section-turquoise>
 
 <app-section-gray>
-    <div class="row">
-      <div class="col-xs-12">
-        <app-text class="footer-text">corobiapolitici.sk &nbsp;&nbsp; 2018</app-text>
-      </div>
+  <div class="row">
+    <!-- div class="col-xs-6 col-md-6 col-lg-6" -->
+    <div class="col-xs-12">
+      <app-text class="footer-text">corobiapolitici.sk &nbsp;&nbsp; 2018</app-text>
     </div>
-  </app-section-gray>
+  </div>
+</app-section-gray>

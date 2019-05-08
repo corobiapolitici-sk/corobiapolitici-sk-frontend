@@ -33,3 +33,17 @@ h1 {
   padding-bottom: 6px;
   padding-top: 4px;
 }
+
+@media(max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    margin-top: 50px;
+  }
+}
+
+@media(min-width: 480px) {
+  h1 {
+    font-size: 4rem;
+    margin-top: 150px;
+  }
+}
