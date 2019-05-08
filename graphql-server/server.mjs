@@ -126,7 +126,12 @@ const driver = neo4j.driver(
   neo4j.auth.basic('neo4j', 'skuska')
 );
 
-const server = new ApolloServer({ schema, context: { driver } });
+const server = new ApolloServer({
+  schema,
+  context: {
+    driver
+  }
+});
 
 server.listen(3003).then(({ url }) => {
   console.log(`GraphQL API ready at ${url}`);

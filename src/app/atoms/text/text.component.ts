@@ -1,9 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-text',
   templateUrl: './text.component.html',
   styleUrls: ['./text.component.scss']
 })
-export class TextComponent {
+export class TextComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }

@@ -1,7 +1,13 @@
+import { PoliticiansComponent } from './pages/politicians/politicians.component';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { HttpLink, HttpLinkModule } from 'apollo-angular-link-http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
+import { MatIconModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './atoms/button/button.component';
@@ -17,9 +23,34 @@ import { SectionGrayComponent } from './atoms/section-gray/section-gray.componen
 import { TextComponent } from './atoms/text/text.component';
 import { ChartComponent } from './atoms/chart/chart.component';
 import { SelectComponent } from './atoms/select/select.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StatisticsComponent } from './molecules/statistics/statistics.component';
+/*
 import { Statistics1Component } from './molecules/statistics1/statistics1.component';
 import { Statistics2Component } from './molecules/statistics2/statistics2.component';
 import { Statistics3Component } from './molecules/statistics3/statistics3.component';
+*/
+import { HeaderComponent } from './organisms/header/header.component';
+import { NavLinksComponent } from './organisms/header/nav-links/nav-links.component';
+import { ClubsComponent } from './pages/clubs/clubs.component';
+import { InfoComponent } from './pages/info/info.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ClubComponent } from './pages/clubs/club/club.component';
+import { PoliticianComponent } from './pages/politicians/politician/politician.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoadingErrorIndicatorComponent } from './atoms/loading-error-indicator/loading-error-indicator.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PoliticianListItemComponent } from './organisms/politician-list-item/politician-list-item.component';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeSectionComponent },
+  { path: 'politicians', component: PoliticiansComponent },
+  { path: 'politicians/:id', component: PoliticianComponent },
+  { path: 'clubs', component: ClubsComponent },
+  { path: 'clubs/:index', component: ClubComponent },
+  { path: 'info', component: InfoComponent },
+  { path: 'contact', component: ContactComponent },
+];
 
 @NgModule({
   declarations: [
@@ -37,18 +68,53 @@ import { Statistics3Component } from './molecules/statistics3/statistics3.compon
     TextComponent,
     ChartComponent,
     SelectComponent,
+    StatisticsComponent,
+    /*
     Statistics1Component,
     Statistics2Component,
     Statistics3Component,
+    */
+    HeaderComponent,
+    PoliticiansComponent,
+    NavLinksComponent,
+    ClubsComponent,
+    InfoComponent,
+    ContactComponent,
+    ClubComponent,
+    PoliticianComponent,
+    LoadingErrorIndicatorComponent,
+    PoliticianListItemComponent,
   ],
   imports: [
     BrowserModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
-    NgxEchartsModule
+    MatIconModule,
+    MatSidenavModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    NgxEchartsModule,
+    HttpClientModule,
+    ApolloModule,
+    HttpLinkModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(
+      appRoutes,
+    ),
   ],
-  providers: [],
+  providers: [{
+    provide: APOLLO_OPTIONS,
+    useFactory(httpLink: HttpLink) {
+      return {
+        cache: new InMemoryCache(),
+        link: httpLink.create({
+          uri: 'http://localhost:3003/graphql'
+        })
+      };
+    },
+    deps: [HttpLink],
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

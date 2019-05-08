@@ -1,26 +1,31 @@
 @import "../../_variables.scss";
 
 .main-background {
-  background: url('../../../assets/img/narodna_rada3.jpg');
-  background-size:     cover;
-  background-repeat:   no-repeat;
+  background: url('../../../assets/img/narodna_rada.jpg');
+  // background: url('../../../assets/img/narodna_rada3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   // height: 100vh;
 }
 
+/*
 .mission {
   text-align: center;
   font-family: $font-regular;
   color: $color-gray;
   font-size: 18pt;
 }
+*/
 
 @media(max-width: 480px) {
   .main-background {
     background-position: bottom;
   }
+  /*
   .mission {
     margin-bottom: 50px;
   }
+  */
 }
 
 @media(min-width: 480px) {
@@ -31,9 +36,11 @@
   .curtains {
     min-height: 50vh;
   }
+  /*
   .mission {
     margin-bottom: 150px;
   }
+  */
 }
 
 .curtains {

@@ -4,11 +4,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Graphql Server
+
+- Run `cd graphql-server`.
+- Run `npm i` to install dependencies.
+- Run `node server.mjs`
+
+### Angular
+
+1. Run `npm i` to install dependencies.
+1. Run `ng serve` for a dev server.
+1. Navigate to `http://localhost:4200/`.
+
+The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Run `ng generate component component-name` to generate a new component.
+1. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 

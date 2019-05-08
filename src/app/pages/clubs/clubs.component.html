@@ -1,0 +1,10 @@
+<ul *ngIf="clubs$ | async as clubs; else loading">
+  <li *ngFor="let club of clubs; let i = index;">
+    <a [routerLink]="[i]">
+      {{ club.id }}({{ club.pocetPoslancov }})
+    </a>
+  </li>
+</ul>
+<ng-template #loading>
+  <app-loading-indicator></app-loading-indicator>
+</ng-template>
