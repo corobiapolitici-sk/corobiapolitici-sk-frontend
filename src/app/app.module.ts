@@ -24,12 +24,12 @@ import { TextComponent } from './atoms/text/text.component';
 import { ChartComponent } from './atoms/chart/chart.component';
 import { SelectComponent } from './atoms/select/select.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StatisticsComponent } from './molecules/statistics/statistics.component';
 /*
+import { StatisticsComponent } from './molecules/statistics/statistics.component';
+*/
 import { Statistics1Component } from './molecules/statistics1/statistics1.component';
 import { Statistics2Component } from './molecules/statistics2/statistics2.component';
 import { Statistics3Component } from './molecules/statistics3/statistics3.component';
-*/
 import { HeaderComponent } from './organisms/header/header.component';
 import { NavLinksComponent } from './organisms/header/nav-links/nav-links.component';
 import { ClubsComponent } from './pages/clubs/clubs.component';
@@ -68,12 +68,12 @@ const appRoutes: Routes = [
     TextComponent,
     ChartComponent,
     SelectComponent,
-    StatisticsComponent,
     /*
+    StatisticsComponent,
+    */
     Statistics1Component,
     Statistics2Component,
     Statistics3Component,
-    */
     HeaderComponent,
     PoliticiansComponent,
     NavLinksComponent,

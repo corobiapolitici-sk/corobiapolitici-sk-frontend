@@ -37,7 +37,6 @@ export class HomeSectionComponent implements OnInit {
       })
       .valueChanges.subscribe(result => {
         console.log(result);
-
       });
   }
 
