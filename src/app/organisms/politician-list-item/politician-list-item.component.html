@@ -1,6 +1,6 @@
 <li *ngIf="politician">
-  <a [routerLink]="['/', 'politicians', politician.id]">
-    <img src="{{politician.fotografia}}" alt="{{politician.meno}} {{politician.priezvisko}}">
-    {{politician.meno}} {{politician.priezvisko}}
-  </a>
+	<a [routerLink]="['/', 'politicians', politician.id]">
+		<img src="{{politician.fotografia}}" alt="{{politician.meno}} {{politician.priezvisko}}" />
+		{{politician.meno}} {{politician.priezvisko}}
+	</a>
 </li>

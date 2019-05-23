@@ -1,15 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+// Load angular modules.
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css']
+	selector: 'app-button',
+	templateUrl: './button.component.html',
 })
-export class ButtonComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class ButtonComponent {
 }

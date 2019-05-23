@@ -1,11 +1,11 @@
-@import "../../_variables.scss";
+@import 'variables';
 
 :host {
-  display: inline-block;
-  background: $color-gray;
-  width: 100%;
+	display: inline-block;
+	background: $color-gray;
+	width: 100%;
 }
 
 div {
-  text-align: center;
+	text-align: center;
 }

@@ -1,25 +1,31 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// Load angular modules.
+import {
+	async,
+	ComponentFixture,
+	TestBed,
+} from '@angular/core/testing'
 
-import { LoadingErrorIndicatorComponent } from './loading-error-indicator.component';
+import { LoadingErrorIndicatorComponent } from './loading-error-indicator.component'
 
 describe('LoadingErrorIndicatorComponent', () => {
-  let component: LoadingErrorIndicatorComponent;
-  let fixture: ComponentFixture<LoadingErrorIndicatorComponent>;
+	let component: LoadingErrorIndicatorComponent
+	let fixture: ComponentFixture<LoadingErrorIndicatorComponent>
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ LoadingErrorIndicatorComponent ]
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed
+			.configureTestingModule({
+				declarations: [LoadingErrorIndicatorComponent],
+			})
+			.compileComponents()
+	}))
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(LoadingErrorIndicatorComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(LoadingErrorIndicatorComponent)
+		component = fixture.componentInstance
+		fixture.detectChanges()
+	})
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+	it('should create', () => {
+		expect(component).toBeTruthy()
+	})
+})

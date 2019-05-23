@@ -1,0 +1,31 @@
+<div *ngIf="(politician$ | async) as polit; else loadingOrError">
+	<h1>{{polit.titul}} {{polit.meno}} {{polit.priezvisko}}</h1>
+	<img src="{{polit.fotografia}}" alt="{{polit.titul}} {{polit.meno}} {{polit.priezvisko}}">
+	<ul>
+		<li>bydlisko: {{polit.bydlisko}}</li>
+		<li>email: {{polit.email}}</li>
+		<li>kandidovalZa: {{polit.kandidovalZa}}</li>
+		<li>kraj: {{polit.kraj}}</li>
+		<li>vybor: <a href="/vybor/...">{{polit.vybor.id}}</a></li>
+		<li>url: "https://www.nrsr.sk/web/Default.aspx?sid=poslanci/poslanec&PoslanecID=258&CisObdobia=7"</li>
+	</ul>
+	<h3>delegacie:</h3>
+	<ul>
+		<li *ngFor="let delegation of polit.delegacie">{{delegation.id}}</li>
+	</ul>
+	<h3>navrhnuteZakony:</h3>
+	<div>
+		<div *ngFor="let law of polit.navrhnuteZakony">{{law.nazov}}</div>
+	</div>
+	<h3>navrhnuteZmeny:</h3>
+	<div>
+		<div *ngFor="let lawChanges of polit.navrhnuteZmeny">{{lawChanges.nazov}}</div>
+	</div>
+	<h3>vystupil:</h3>
+	<div>
+		<div *ngFor="let presentation of polit.vystupil">{{presentation.text}}</div>
+	</div>
+</div>
+<ng-template #loadingOrError>
+	<app-loading-indicator></app-loading-indicator>
+</ng-template>

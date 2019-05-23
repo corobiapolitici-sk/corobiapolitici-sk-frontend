@@ -1,14 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+// Load angular modules.
+import {
+	Component,
+	Input,
+} from '@angular/core'
 
 @Component({
-  selector: 'app-politician-list-item',
-  templateUrl: './politician-list-item.component.html',
-  styleUrls: ['./politician-list-item.component.css']
+	selector: 'app-politician-list-item',
+	templateUrl: './politician-list-item.component.html',
 })
-export class PoliticianListItemComponent implements OnInit {
-  @Input() politician;
-
-  ngOnInit() {
-  }
-
+export class PoliticianListItemComponent {
+	@Input() politician
 }

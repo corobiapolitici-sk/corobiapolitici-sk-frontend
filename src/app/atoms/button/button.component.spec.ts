@@ -1,25 +1,32 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// Load angular modules.
+import {
+	async,
+	ComponentFixture,
+	TestBed,
+} from '@angular/core/testing'
 
-import { ButtonComponent } from './button.component';
+// Load local modules.
+import { ButtonComponent } from './button.component'
 
 describe('ButtonComponent', () => {
-  let component: ButtonComponent;
-  let fixture: ComponentFixture<ButtonComponent>;
+	let component: ButtonComponent
+	let fixture: ComponentFixture<ButtonComponent>
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ButtonComponent ]
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed
+			.configureTestingModule({
+				declarations: [ButtonComponent],
+			})
+			.compileComponents()
+	}))
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ButtonComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(ButtonComponent)
+		component = fixture.componentInstance
+		fixture.detectChanges()
+	})
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+	it('should create', () => {
+		expect(component).toBeTruthy()
+	})
+})

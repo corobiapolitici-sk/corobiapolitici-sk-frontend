@@ -1,8 +1,8 @@
-@import "../../_variables.scss";
+@import 'variables';
 
 p {
-  color: white;
-  font-family: $font-regular;
-  padding-left: 15px;
-  padding-right: 15px;
+	color: white;
+	font-family: $font-regular;
+	padding-left: 15px;
+	padding-right: 15px;
 }

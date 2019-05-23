@@ -27,14 +27,10 @@ MATCH (c:Hlasovanie) WHERE c.cisloHlasovania IS NULL SET c.cisloHlasovania = c.�
 MATCH (c:Zmena) WHERE c.cisloObdobia IS NULL SET c.cisloObdobia = c.čísloObdobia REMOVE c.čísloObdobia
 MATCH (c:Zmena) WHERE c.cisloSchodze IS NULL SET c.cisloSchodze = c.čísloSchôdze REMOVE c.čísloSchôdze
 
-
 Zatial nespracovane
 MATCH (c:Klub) WHERE c.typClenstva IS NULL SET c.typClenstva = c.typČlenstva REMOVE c.typČlenstva
 MATCH (c:Klub) WHERE c.casNaposledy IS NULL SET c.casNaposledy = c.časNaposledy REMOVE c.časNaposledy
 ////MATCH (c:Zakon) WHERE c.navrhovatel IS NULL SET c.navrhovatel = c.navrhovateľ REMOVE c.navrhovateľ
-
-
-
 
 match (n1)-[old:`Člen`]->(n2) create (n1)-[new:Clen]->(n2) delete old
 match (n1)-[old:`BolČlenom`]->(n2) create (n1)-[new:BolClenom]->(n2) delete old

@@ -1,24 +1,23 @@
 :host {
-  width: 100%;
+	width: 100%;
 }
 
 @media(max-width: 480px) {
-  #vis-3-a, #vis-3-b {
-    width: 95%;
-    height: 300px;
-  }
+	#vis-3-a, #vis-3-b {
+		width: 95%;
+		height: 300px;
+	}
 }
 
 @media(min-width: 480px) {
-  #vis-3-a, #vis-3-b {
-    width: 48%;
-    height: 550px;
-  }
-  #vis-3-a {
-    float: left;
-  }
-  #vis-3-b {
-    float: right;
-  }
-
+	#vis-3-a, #vis-3-b {
+		width: 48%;
+		height: 550px;
+	}
+	#vis-3-a {
+		float: left;
+	}
+	#vis-3-b {
+		float: right;
+	}
 }
