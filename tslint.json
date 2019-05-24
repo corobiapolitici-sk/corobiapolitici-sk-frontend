@@ -1,8 +1,11 @@
 {
+	"extends": "tslint:recommended", // TODO: This means we may be able to remove alot of rules.
 	"rulesDirectory": [
-		"node_modules/codelyzer"
+		"codelyzer"
 	],
 	"rules": {
+		"array-type": false,
+		"arrow-parens": false,
 		"arrow-return-shorthand": true,
 		"callable-types": true,
 		"class-name": true,
@@ -10,10 +13,24 @@
 			true,
 			"check-space"
 		],
+		"component-class-suffix": true,
+		"component-selector": [
+			true,
+			"element",
+			"app",
+			"kebab-case"
+		],
 		"curly": true,
 		"deprecation": {
 			"severity": "warn"
 		},
+		"directive-class-suffix": true,
+		"directive-selector": [
+			true,
+			"attribute",
+			"app",
+			"camelCase"
+		],
 		"eofline": true,
 		"forin": true,
 		"import-blacklist": [
@@ -26,7 +43,11 @@
 			"tabs"
 		],
 		"interface-over-type-literal": true,
+		"interface-name": false,
+		"invoke-injectable": true,
 		"label-position": true,
+		// TODO: "label-undefined": true,
+		"max-classes-per-file": true,
 		"max-line-length": [
 			true,
 			140
@@ -40,11 +61,15 @@
 					"instance-field",
 					"static-method",
 					"instance-method"
+					// TODO: "static-before-instance",
+					// TODO:"variables-before-functions"
 				]
 			}
 		],
 		"no-arg": true,
 		"no-bitwise": true,
+		"no-conditional-assignment": true,
+		"no-consecutive-blank-lines": false,
 		"no-console": [
 			true,
 			"debug",
@@ -56,6 +81,8 @@
 		"no-construct": true,
 		"no-debugger": true,
 		"no-duplicate-super": true,
+		// TODO: "no-duplicate-key": true,
+		"no-duplicate-variable": true,
 		"no-empty": true,
 		"no-empty-interface": true,
 		"no-eval": true,
@@ -63,19 +90,31 @@
 			true,
 			"ignore-params"
 		],
+		"no-input-rename": true,
+		"no-magic-numbers": true,
 		"no-misused-new": true,
 		"no-non-null-assertion": true,
+		"no-output-on-prefix": true,
+		"no-output-rename": true,
 		"no-redundant-jsdoc": true,
+		"no-require-imports": true,
 		"no-shadowed-variable": true,
 		"no-string-literal": false,
 		"no-string-throw": true,
 		"no-switch-case-fall-through": true,
 		"no-trailing-whitespace": true,
 		"no-unnecessary-initializer": true,
+		// TODO: "no-unreachable": true,
 		"no-unused-expression": true,
+		// TODO: "no-unused-variable": true,
 		"no-use-before-declare": true,
 		"no-var-keyword": true,
+		"no-var-requires": false,
 		"object-literal-sort-keys": false,
+		"object-literal-key-quotes": [
+			true,
+			"as-needed"
+		],
 		"one-line": [
 			true,
 			"check-open-brace",
@@ -83,6 +122,8 @@
 			"check-else",
 			"check-whitespace"
 		],
+		"only-arrow-functions": true,
+		"ordered-imports": true,
 		"prefer-const": true,
 		"quotemark": [
 			true,
@@ -93,6 +134,7 @@
 			true,
 			"never"
 		],
+		"trailing-comma": true,
 		"triple-equals": [
 			true,
 			"allow-null-check"
@@ -107,7 +149,14 @@
 				"variable-declaration": "nospace"
 			}
 		],
+		"typeof-compare": true,
 		"unified-signatures": true,
+		"use-host-property-decorator": true,
+		"use-input-property-decorator": true,
+		"use-isnan": true,
+		"use-life-cycle-interface": true,
+		"use-output-property-decorator": true,
+		"use-pipe-transform-interface": true,
 		"variable-name": false,
 		"whitespace": [
 			true,
@@ -116,39 +165,6 @@
 			"check-operator",
 			"check-separator",
 			"check-type"
-		],
-		"no-output-on-prefix": true,
-		"use-input-property-decorator": true,
-		"use-output-property-decorator": true,
-		"use-host-property-decorator": true,
-		"no-input-rename": true,
-		"no-output-rename": true,
-		"use-life-cycle-interface": true,
-		"use-pipe-transform-interface": true,
-		"component-class-suffix": true,
-		"directive-class-suffix": true,
-
-		"no-magic-numbers": true,
-		"only-arrow-functions": true,
-		"no-conditional-assignment": true,
-		"no-duplicate-variable": true,
-		"use-isnan": true,
-		"max-classes-per-file": true,
-		"no-require-imports": true,
-		"trailing-comma": true,
-		"object-literal-key-quotes": false,
-		"ordered-imports": true,
-		"directive-selector": [
-			true,
-			"attribute",
-			"app",
-			"camelCase"
-		],
-		"component-selector": [
-			true,
-			"element",
-			"app",
-			"kebab-case"
 		]
 	}
 }

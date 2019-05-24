@@ -12,7 +12,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { RouterModule } from '@angular/router'
 
 // Load npm modules.
 // import {
@@ -27,6 +26,7 @@ import {
 import { NgxEchartsModule } from 'ngx-echarts'
 
 // Load local modules.
+import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { AppBarComponent } from './atoms/app-bar/app-bar.component'
 import { ButtonComponent } from './atoms/button/button.component'
@@ -88,6 +88,7 @@ import { HomeComponent } from './pages/home/home.component'
 		// PoliticianListItemComponent,
 	],
 	imports: [
+		AppRoutingModule,
 		BrowserModule,
 		MatButtonModule,
 		MatCheckboxModule,
@@ -101,15 +102,6 @@ import { HomeComponent } from './pages/home/home.component'
 		// ApolloModule,
 		HttpLinkModule,
 		BrowserAnimationsModule,
-		RouterModule.forRoot([
-			{ path: '', component: HomeComponent },
-			// { path: 'politicians', component: PoliticiansComponent },
-			// { path: 'politicians/:id', component: PoliticianComponent },
-			// { path: 'clubs', component: ClubsComponent },
-			// { path: 'clubs/:index', component: ClubComponent },
-			// { path: 'info', component: InfoComponent },
-			// { path: 'contact', component: ContactComponent },
-		]),
 	],
 	// providers: [{
 	// 	provide: APOLLO_OPTIONS,
