@@ -18,10 +18,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 	// ApolloModule,
 	// APOLLO_OPTIONS,
 // } from 'apollo-angular'
-import {
+// import {
 	// HttpLink,
-	HttpLinkModule,
-} from 'apollo-angular-link-http'
+	// HttpLinkModule,
+// } from 'apollo-angular-link-http'
 // import { InMemoryCache } from 'apollo-cache-inmemory'
 import { NgxEchartsModule } from 'ngx-echarts'
 
@@ -101,19 +101,19 @@ import { LawsComponent } from './pages/laws/laws.component'
 	],
 	imports: [
 		AppRoutingModule,
+		BrowserAnimationsModule,
 		BrowserModule,
+		HttpClientModule,
 		MatButtonModule,
 		MatCheckboxModule,
-		MatToolbarModule,
 		MatIconModule,
-		MatSidenavModule,
 		MatProgressSpinnerModule,
+		MatSidenavModule,
 		MatSnackBarModule,
+		MatToolbarModule,
 		NgxEchartsModule,
-		HttpClientModule,
 		// ApolloModule,
-		HttpLinkModule,
-		BrowserAnimationsModule,
+		// HttpLinkModule,
 	],
 	// providers: [{
 	// 	provide: APOLLO_OPTIONS,
