@@ -1,8 +1,8 @@
-//Load angular modules.
+// Load angular modules.
 import { NgModule } from '@angular/core'
 import {
-	Routes,
 	RouterModule,
+	Routes,
 } from '@angular/router'
 
 // Load local modules.
@@ -15,14 +15,29 @@ import { HomeComponent } from './pages/home/home.component'
 // import { PoliticianComponent } from './pages/politician/politician.component'
 // import { PoliticiansComponent } from './pages/politicians/politicians.component'
 
-const routes: Routes = [
-	{ path: '', component: HomeComponent },
-	// { path: 'politicians', component: PoliticiansComponent },
-	// { path: 'politicians/:id', component: PoliticianComponent },
-	// { path: 'clubs', component: ClubsComponent },
-	// { path: 'clubs/:index', component: ClubComponent },
-	// { path: 'info', component: InfoComponent },
-	// { path: 'contact', component: ContactComponent },
+const routes: Routes = [{
+	path: '',
+	component: HomeComponent,
+},
+/* {
+	path: 'politicians',
+	component: PoliticiansComponent,
+}, {
+	path: 'politicians/:id',
+	component: PoliticianComponent,
+}, {
+	path: 'clubs',
+	component: ClubsComponent,
+}, {
+	path: 'clubs/:index',
+	component: ClubComponent,
+}, {
+	path: 'info',
+	component: InfoComponent,
+}, {
+	path: 'contact',
+	component: ContactComponent,
+} */
 ]
 
 @NgModule({

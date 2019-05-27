@@ -7,5 +7,5 @@ import { Component } from '@angular/core'
 	styleUrls: ['./statistics1.component.scss'],
 })
 export class Statistics1Component {
-	selectOptions = []
+	selectOptions: string[] = []
 }

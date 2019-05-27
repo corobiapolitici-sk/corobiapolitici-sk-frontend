@@ -10,7 +10,7 @@ import {
 	styleUrls: ['./card-with-icon.component.scss'],
 })
 export class CardWithIconComponent {
-	@Input() title
-	@Input() text
-	@Input() iconSrc
+	@Input() title: string
+	@Input() text: string
+	@Input() iconSrc: string
 }

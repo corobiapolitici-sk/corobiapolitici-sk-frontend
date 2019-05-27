@@ -1,32 +1,32 @@
-// Load angular modules.
-import {
-	async,
-	ComponentFixture,
-	TestBed,
-} from '@angular/core/testing'
+// // Load angular modules.
+// import {
+// 	async,
+// 	ComponentFixture,
+// 	TestBed,
+// } from '@angular/core/testing'
 
-// Load local modules.
-import { PoliticiansComponent } from './politicians.component'
+// // Load local modules.
+// import { PoliticiansComponent } from './politicians.component'
 
-describe('PoliticiansComponent', () => {
-	let component: PoliticiansComponent
-	let fixture: ComponentFixture<PoliticiansComponent>
+// describe('PoliticiansComponent', () => {
+// 	let component: PoliticiansComponent
+// 	let fixture: ComponentFixture<PoliticiansComponent>
 
-	beforeEach(async(() => {
-		TestBed
-			.configureTestingModule({
-				declarations: [PoliticiansComponent],
-			})
-			.compileComponents()
-	}))
+// 	beforeEach(async(() => {
+// 		TestBed
+// 			.configureTestingModule({
+// 				declarations: [PoliticiansComponent],
+// 			})
+// 			.compileComponents()
+// 	}))
 
-	beforeEach(() => {
-		fixture = TestBed.createComponent(PoliticiansComponent)
-		component = fixture.componentInstance
-		fixture.detectChanges()
-	})
+// 	beforeEach(() => {
+// 		fixture = TestBed.createComponent(PoliticiansComponent)
+// 		component = fixture.componentInstance
+// 		fixture.detectChanges()
+// 	})
 
-	it('should create', () => {
-		expect(component).toBeTruthy()
-	})
-})
+// 	it('should create', () => {
+// 		expect(component).toBeTruthy()
+// 	})
+// })
