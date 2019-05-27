@@ -1,3 +1,9 @@
+// nema vyfiltrovane nepodstatne vystupenia predsadajucich atd. - pozri napriklad most hid, bugar tam ma skoro 10k minut
+// my sme sa rozpravali na tom calle o tom a sme sa v principe zhodli, ze by sme ukazali grafy, ktore nie su nutne rovnake ako to co od nas chcel ten novinar, ale budu podobne, aby bolo jasne, ze tie data mame. Mozem ti poslat aj nezgrupovany json, ale nemyslim si ze je to nutne. Ci si myslis, ze hej?
+// nezgrupovany = su tam vsetci  poslanci?
+// tu je full csv, z ktoreho si robil filtre aj novinar
+// tie rozpravy co som ti poslal su teda po spraveni groupby na atributoch klub a tlac
+
 ,schodza,tlac,meno,klub,druh,dlzka
 1,33,971,Peter Osuský,(SaS),Vystúpenie s faktickou poznámkou,1
 2,33,1013,Peter Osuský,(SaS),Uvádzajúci uvádza bod,2

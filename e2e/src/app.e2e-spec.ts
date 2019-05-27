@@ -1,8 +1,11 @@
-import { AppPage } from './app.po'
+// Load npm modules.
 import {
 	browser,
 	logging,
 } from 'protractor'
+
+// Load local modules.
+import { AppPage } from './app.po'
 
 describe('workspace-project App', () => {
 	let page: AppPage

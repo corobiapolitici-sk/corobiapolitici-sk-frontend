@@ -1,6 +1,7 @@
 {
-  "name": "corobiapolitici",
+  "name": "corobiapolitici-sk-frontend",
   "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -33,7 +34,6 @@
     "core-js": "^2.5.4",
     "echarts": "^4.1.0",
     "graphql": "^0.13.2",
-    "graphql-server": "file:graphql-server",
     "graphql-tag": "^2.10.0",
     "ngx-echarts": "^4.0.0",
     "rxjs": "~6.3.3",

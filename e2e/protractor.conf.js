@@ -28,5 +28,5 @@ exports.config = {
 				displayStacktrace: true,
 			},
 		}))
-	}
+	},
 }

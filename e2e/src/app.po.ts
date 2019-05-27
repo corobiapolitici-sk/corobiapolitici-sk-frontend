@@ -1,3 +1,4 @@
+// Load npm modules.
 import {
 	browser,
 	by,
