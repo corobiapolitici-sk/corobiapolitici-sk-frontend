@@ -25,9 +25,13 @@ import {
 // import { InMemoryCache } from 'apollo-cache-inmemory'
 import { NgxEchartsModule } from 'ngx-echarts'
 
-// Load local modules.
+// Load angular support modules.
 import { AppRoutingModule } from './app-routing.module'
+
+// Load angular component modules.
 import { AppComponent } from './app.component'
+
+// Load angular atom component modules.
 import { AppBarComponent } from './atoms/app-bar/app-bar.component'
 import { ButtonComponent } from './atoms/button/button.component'
 import { CardComponent } from './atoms/card/card.component'
@@ -39,17 +43,24 @@ import { SectionGrayComponent } from './atoms/section-gray/section-gray.componen
 import { SectionTurquoiseComponent } from './atoms/section-turquoise/section-turquoise.component'
 import { SelectComponent } from './atoms/select/select.component'
 import { TextComponent } from './atoms/text/text.component'
+
+// Load angular molecule component modules.
 import { CardWithIconComponent } from './molecules/card-with-icon/card-with-icon.component'
 import { Statistics1Component } from './molecules/statistics1/statistics1.component'
 import { Statistics2Component } from './molecules/statistics2/statistics2.component'
 import { Statistics3Component } from './molecules/statistics3/statistics3.component'
+
+// Load angular organism component modules.
 import { HeaderComponent } from './organisms/header/header.component'
 import { NavLinksComponent } from './organisms/nav-links/nav-links.component'
 // import { PoliticianListItemComponent } from './organisms/politician-list-item/politician-list-item.component'
+
+// Load angular page component modules.
 // import { ClubComponent } from './pages/club/club.component'
 // import { ClubsComponent } from './pages/clubs/clubs.component'
 // import { ContactComponent } from './pages/contact/contact.component'
 import { HomeComponent } from './pages/home/home.component'
+import { LawsComponent } from './pages/laws/laws.component'
 // import { InfoComponent } from './pages/info/info.component'
 // import { PoliticianComponent } from './pages/politician/politician.component'
 // import { PoliticiansComponent } from './pages/politicians/politicians.component'
@@ -77,15 +88,16 @@ import { HomeComponent } from './pages/home/home.component'
 		// Organisms.
 		HeaderComponent,
 		NavLinksComponent,
-		// PoliticiansComponent,
+		// PoliticianListItemComponent,
+		// Pages.
 		// ClubComponent,
 		// ClubsComponent,
-		// InfoComponent,
 		// ContactComponent,
 		HomeComponent,
+		// InfoComponent,
+		LawsComponent,
 		// PoliticianComponent,
 		// PoliticiansComponent,
-		// PoliticianListItemComponent,
 	],
 	imports: [
 		AppRoutingModule,
