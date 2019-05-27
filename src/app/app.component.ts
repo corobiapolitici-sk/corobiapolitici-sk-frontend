@@ -15,8 +15,6 @@ import {
 })
 
 export class AppComponent implements OnInit {
-	title = 'corobiapolitici'
-
 	// constructor(
 	// 	private apollo: Apollo
 	// ) {}
