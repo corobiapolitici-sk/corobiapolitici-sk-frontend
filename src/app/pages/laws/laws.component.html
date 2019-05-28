@@ -3,7 +3,7 @@
 		<input
 			#searchBox
 			id="search-box"
-			placeholder="Vyhľadávanie"
+			placeholder="Vyhľadávanie (názov, druh, výbor, navrhovateľ, klub)"
 			(input)="search(searchBox.value)"
 		/>
 	</form>
@@ -14,28 +14,51 @@
 		<p (click)="toggleShowCommittee()" >{{showCommittee ? '-' : '+'}} Filtrovať výbory</p>
 	</div>
 	<div *ngIf="showCommittee">
-		<app-card *ngFor="let committee of committees">
-			<img src="{{committee.imageUrl}}" width="150" height="150" />
-			<app-text>{{committee.name}}</app-text>
-		</app-card>
+		<ng-container *ngFor="let committee of committees">
+			<app-card
+				*ngIf="selectedCommitteeNames.indexOf(committee.name) === -1"
+				(click)="addCommittee(committee.name)"
+			>
+				<img src="{{committee.imageUrl}}" width="150" height="150" />
+				<app-text>{{committee.name}}</app-text>
+			</app-card>
+		</ng-container>
+	</div>
+	<div>
+		<ng-container *ngFor="let committee of committees">
+			<app-text
+				*ngIf="selectedCommitteeNames.indexOf(committee.name) !== -1"
+				(click)="removeCommittee(committee.name)"
+			>{{committee.name}}</app-text>
+		</ng-container>
 	</div>
 </app-section-turquoise>
 
-<app-section-gray class="laws-search-result">
-	<div *ngIf="pageLaws.length > 0">
-		<ul class="laws-search-items">
-			<li *ngFor="let law of pageLaws">
-				{{law.nazov}}
-			</li>
-		</ul>
-		<ul *ngIf="pageCount > 1" class="pagination">
-			<li
-				*ngFor="let pageNumber of pageNumbers"
-				(click)="selectPage(pageNumber)"
-			>{{pageNumber + 1}}</li>
-		</ul>
+<div class="laws-search-result">
+	<div class="container">
+		<div class="row">
+			<div *ngIf="pageLaws.length > 0">
+				<ul class="laws-search-items">
+					<li *ngFor="let law of pageLaws">
+						<a href="{{law.url}}" title="{{law.nazov}}" target="_blank">{{law.nazov}}</a>
+						<ul>
+							<li>Druh: <strong>{{law.druh}}</strong></li>
+							<li>Dátum doručenia: <strong>{{law.datumDorucenia}}</strong></li>
+							<li>Gestorský výbor: <strong>{{law.gestorskyVyborName}}</strong></li>
+							<li>Navrhnutý poslancami: <strong>TODO</strong></li>
+						</ul>
+					</li>
+				</ul>
+				<ul *ngIf="pageCount > 1" class="pagination">
+					<li
+						*ngFor="let pageNumber of pageNumbers"
+						(click)="selectPage(pageNumber)"
+					>{{pageNumber + 1}}</li>
+				</ul>
+			</div>
+			<div class="none-found" *ngIf="pageLaws.length === 0">
+				<p>Neboli nájdené žiadne zákony, vyhovujúce hľadaným kritériam.</p>
+			</div>
+		</div>
 	</div>
-	<div class="none-found" *ngIf="pageLaws.length === 0">
-		<app-text>Neboli nájdené žiadne zákony, vyhovujúce hľadaným kritériam.</app-text>
-	</div>
-</app-section-gray>
+</div>

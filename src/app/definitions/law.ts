@@ -7,4 +7,6 @@ export class Law {
 	stav: string
 	url: string
 	vysledok: string
+	gestorskyVyborName: string
+	navrhnutyVyboromName: string
 }

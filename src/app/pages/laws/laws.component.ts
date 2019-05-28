@@ -9,6 +9,7 @@ import { Committee } from '../../definitions/committee'
 import { Law } from '../../definitions/law'
 import { CommitteeService } from '../../services/committee/committee.service'
 import { LawService } from '../../services/law/law.service'
+import { advancedFind } from '../../utils'
 
 @Component({
 	selector: 'app-laws',
@@ -24,11 +25,11 @@ export class LawsComponent implements OnInit {
 	pageCount: number
 	pageNumbers: number[] = []
 
-	searchTerm: string = ''
-	selectedCommitteeId: string = ''
+	searchTerm = ''
+	selectedCommitteeNames: string[] = []
 	filteredLaws: Law[] = []
 
-	selectedPageNumber: number = 0
+	selectedPageNumber = 0
 	pageLaws: Law[] = []
 
 	constructor(
@@ -67,16 +68,20 @@ export class LawsComponent implements OnInit {
 		this.filterLaws()
 	}
 
-	selectCommittee(
-		id: string,
+	addCommittee(
+		name: string,
 	): void {
-		this.selectedCommitteeId = id
+		this.selectedCommitteeNames.push(name)
 		this.selectedPageNumber = 0
 		this.filterLaws()
 	}
 
-	clearCommittee(): void {
-		this.selectedCommitteeId = ''
+	removeCommittee(
+		name: string,
+	): void {
+		this.selectedCommitteeNames = this.selectedCommitteeNames.filter((selectedCommitteeName) => {
+			return selectedCommitteeName !== name
+		})
 		this.selectedPageNumber = 0
 		this.filterLaws()
 	}
@@ -91,21 +96,26 @@ export class LawsComponent implements OnInit {
 	filterLaws(): void {
 		this.filteredLaws = this.laws.filter((law) => {
 			if (this.searchTerm !== '') {
-				if (
-					(law.druh.indexOf(this.searchTerm) === -1)
-					&& (law.nazov.indexOf(this.searchTerm) === -1)
-					&& (law.stav.indexOf(this.searchTerm) === -1)
-					&& (law.url.indexOf(this.searchTerm) === -1)
-					&& (law.vysledok.indexOf(this.searchTerm) === -1)
-					// vybory
-					// poslanci
+				if (!advancedFind(this.searchTerm, [
+					law.druh,
+					law.nazov,
+					law.stav,
+					law.url,
+					law.vysledok,
+					law.gestorskyVyborName,
+					law.navrhnutyVyboromName,
+					// TODO: poslanci
+				])
 				) {
 					return false
 				}
 			}
 
-			if (this.selectedCommitteeId !== '') {
-				if (false) {
+			if (this.selectedCommitteeNames.length > 0) {
+				if (
+					(this.selectedCommitteeNames.indexOf(law.gestorskyVyborName) === -1)
+					&& (this.selectedCommitteeNames.indexOf(law.navrhnutyVyboromName) === -1)
+				) {
 					return false
 				}
 			}
