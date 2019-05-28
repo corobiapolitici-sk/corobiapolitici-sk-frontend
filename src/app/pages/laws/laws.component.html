@@ -1,17 +1,41 @@
-<app-section-gray>
-	<app-search-bar></app-search-bar>
+<app-section-gray class="search-bar">
+	<form>
+		<input
+			#searchBox
+			id="search-box"
+			placeholder="Vyhľadávanie"
+			(input)="search(searchBox.value)"
+		/>
+	</form>
 </app-section-gray>
 
 <app-section-turquoise class="committee-cards">
-	<app-card *ngFor="let committee of committees">
-		<img src="{{committee.imageUrl}}" width="150" height="150" />
-		<app-text>{{committee.name}}</app-text>
-	</app-card>
+	<div class="committee-toggle">
+		<p (click)="toggleShowCommittee()" >{{showCommittee ? '-' : '+'}} Filtrovať výbory</p>
+	</div>
+	<div *ngIf="showCommittee">
+		<app-card *ngFor="let committee of committees">
+			<img src="{{committee.imageUrl}}" width="150" height="150" />
+			<app-text>{{committee.name}}</app-text>
+		</app-card>
+	</div>
 </app-section-turquoise>
 
 <app-section-gray class="laws-search-result">
-	x
-	<!-- ul>
-		<li *ngFor="let law of laws">{{law.nazov}}</li>
-	</ul -->
+	<div *ngIf="pageLaws.length > 0">
+		<ul class="laws-search-items">
+			<li *ngFor="let law of pageLaws">
+				{{law.nazov}}
+			</li>
+		</ul>
+		<ul *ngIf="pageCount > 1" class="pagination">
+			<li
+				*ngFor="let pageNumber of pageNumbers"
+				(click)="selectPage(pageNumber)"
+			>{{pageNumber + 1}}</li>
+		</ul>
+	</div>
+	<div class="none-found" *ngIf="pageLaws.length === 0">
+		<app-text>Neboli nájdené žiadne zákony, vyhovujúce hľadaným kritériam.</app-text>
+	</div>
 </app-section-gray>

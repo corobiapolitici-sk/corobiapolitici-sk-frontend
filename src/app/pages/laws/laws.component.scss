@@ -5,8 +5,35 @@
 	padding: 0;
 }
 
+.search-bar form {
+	padding: 1em;
+}
+
+.search-bar input {
+	font-family: $font-regular;
+	font-size: 16pt;
+	width: 80%;
+	margin: 0 auto;
+}
+
 .committee-cards {
 	padding: 1em ;
+}
+
+.committee-cards .committee-toggle {
+	color: white;
+}
+
+.committee-cards .committee-toggle p {
+	cursor: pointer;
+	font-family: $font-regular;
+	text-transform: uppercase;
+	font-size: 14pt;
+	margin-bottom: 0;
+}
+
+.committee-cards .committee-toggle:hover {
+	text-decoration: underline;
 }
 
 .committee-cards app-card {
@@ -21,4 +48,46 @@
 
 .committee-cards app-card:hover {
 	background-color: lighten($color-gray, 5%);
+}
+
+.laws-search-result .laws-search-items {
+	text-align: left;
+	list-style: none;
+}
+
+.laws-search-result .laws-search-items li {
+	font-family: $font-medium;
+	font-size: 14pt;
+	border: 1px solid white;
+	color: white;
+	padding: 0.2em;
+	margin: 0.5em;
+	border-radius: 4px;
+}
+
+.laws-search-result .pagination {
+	display: block;
+	text-align: center;
+}
+
+.laws-search-result .pagination li {
+	background-color: $color-turquoise-regular;
+	border-radius: 4px;
+	cursor: pointer;
+	display: inline-block;
+	border: 1px solid white;
+	color: white;
+	width: 44px;
+	padding: 0.2em;
+	margin: 0.5em;
+}
+
+.laws-search-result .pagination li:hover {
+	text-decoration: underline;
+	background-color: lighten($color-turquoise-regular, 5%)
+}
+
+.laws-search-result .none-found {
+	font-size: 16pt;
+	margin: 2em;
 }

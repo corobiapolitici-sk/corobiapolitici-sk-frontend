@@ -37,7 +37,6 @@ import { ChartComponent } from './atoms/chart/chart.component'
 import { HeadingComponent } from './atoms/heading/heading.component'
 import { LoadingErrorIndicatorComponent } from './atoms/loading-error-indicator/loading-error-indicator.component'
 import { LogoComponent } from './atoms/logo/logo.component'
-import { SearchBarComponent } from './atoms/search-bar/search-bar.component'
 import { SectionGrayComponent } from './atoms/section-gray/section-gray.component'
 import { SectionTurquoiseComponent } from './atoms/section-turquoise/section-turquoise.component'
 import { SelectComponent } from './atoms/select/select.component'
@@ -74,7 +73,6 @@ import { StatisticsComponent } from './pages/statistics/statistics.component'
 		HeadingComponent,
 		LoadingErrorIndicatorComponent,
 		LogoComponent,
-		SearchBarComponent,
 		SectionGrayComponent,
 		SectionTurquoiseComponent,
 		SelectComponent,
