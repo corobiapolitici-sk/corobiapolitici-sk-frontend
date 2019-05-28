@@ -1,0 +1,24 @@
+@import 'variables';
+
+:host {
+	margin: 0;
+	padding: 0;
+}
+
+.committee-cards {
+	padding: 1em ;
+}
+
+.committee-cards app-card {
+	cursor: pointer;
+	padding: 5px;
+	background-color: $color-gray;
+	float: left;
+	margin: 5px;
+	width: 210px;
+	height: 220px;
+}
+
+.committee-cards app-card:hover {
+	background-color: lighten($color-gray, 5%);
+}

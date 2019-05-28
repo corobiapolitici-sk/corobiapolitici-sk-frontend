@@ -1,3 +1,17 @@
-<ul>
-	<li *ngFor="let committee of committees">{{committee.name}}</li>
-</ul>
+<app-section-gray>
+	<app-search-bar></app-search-bar>
+</app-section-gray>
+
+<app-section-turquoise class="committee-cards">
+	<app-card *ngFor="let committee of committees">
+		<img src="{{committee.imageUrl}}" width="150" height="150" />
+		<app-text>{{committee.name}}</app-text>
+	</app-card>
+</app-section-turquoise>
+
+<app-section-gray class="laws-search-result">
+	x
+	<!-- ul>
+		<li *ngFor="let law of laws">{{law.nazov}}</li>
+	</ul -->
+</app-section-gray>

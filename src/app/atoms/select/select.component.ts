@@ -16,9 +16,9 @@ export class SelectComponent {
 		option: string,
 		name: string,
 	}>
-	@Output() change = new EventEmitter<any>()
+	@Output() change = new EventEmitter<string>()
 
-	onChange(value: any) {
+	onChange(value: string) {
 		this.change.emit(value)
 	}
 }

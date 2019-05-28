@@ -6,5 +6,4 @@ import { Component } from '@angular/core'
 	templateUrl: './loading-error-indicator.component.html',
 	styleUrls: ['./loading-error-indicator.component.scss'],
 })
-export class LoadingErrorIndicatorComponent {
-}
+export class LoadingErrorIndicatorComponent {}

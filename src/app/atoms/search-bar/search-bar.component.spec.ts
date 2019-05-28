@@ -6,22 +6,22 @@ import {
 } from '@angular/core/testing'
 
 // Load local modules.
-import { ButtonComponent } from './button.component'
+import { SearchBarComponent } from './search-bar.component'
 
-describe('ButtonComponent', () => {
-	let component: ButtonComponent
-	let fixture: ComponentFixture<ButtonComponent>
+describe('SearchBarComponent', () => {
+	let component: SearchBarComponent
+	let fixture: ComponentFixture<SearchBarComponent>
 
 	beforeEach(async(() => {
 		TestBed
 			.configureTestingModule({
-				declarations: [ButtonComponent],
+				declarations: [SearchBarComponent],
 			})
 			.compileComponents()
 	}))
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(ButtonComponent)
+		fixture = TestBed.createComponent(SearchBarComponent)
 		component = fixture.componentInstance
 		fixture.detectChanges()
 	})

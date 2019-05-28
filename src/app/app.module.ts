@@ -3,13 +3,13 @@ import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
 import {
 	MatButtonModule,
-	MatCheckboxModule,
-	MatIconModule,
-	MatSidenavModule,
+	// MatCheckboxModule,
+	// MatIconModule,
+	// MatSidenavModule,
 	MatToolbarModule,
 } from '@angular/material'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
-import { MatSnackBarModule } from '@angular/material/snack-bar'
+// import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
@@ -32,13 +32,12 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 
 // Load angular atom component modules.
-import { AppBarComponent } from './atoms/app-bar/app-bar.component'
-import { ButtonComponent } from './atoms/button/button.component'
 import { CardComponent } from './atoms/card/card.component'
 import { ChartComponent } from './atoms/chart/chart.component'
 import { HeadingComponent } from './atoms/heading/heading.component'
 import { LoadingErrorIndicatorComponent } from './atoms/loading-error-indicator/loading-error-indicator.component'
 import { LogoComponent } from './atoms/logo/logo.component'
+import { SearchBarComponent } from './atoms/search-bar/search-bar.component'
 import { SectionGrayComponent } from './atoms/section-gray/section-gray.component'
 import { SectionTurquoiseComponent } from './atoms/section-turquoise/section-turquoise.component'
 import { SelectComponent } from './atoms/select/select.component'
@@ -70,13 +69,12 @@ import { StatisticsComponent } from './pages/statistics/statistics.component'
 	declarations: [
 		AppComponent,
 		// Atoms.
-		AppBarComponent,
-		ButtonComponent,
 		CardComponent,
 		ChartComponent,
 		HeadingComponent,
 		LoadingErrorIndicatorComponent,
 		LogoComponent,
+		SearchBarComponent,
 		SectionGrayComponent,
 		SectionTurquoiseComponent,
 		SelectComponent,
@@ -107,11 +105,11 @@ import { StatisticsComponent } from './pages/statistics/statistics.component'
 		BrowserModule,
 		HttpClientModule,
 		MatButtonModule,
-		MatCheckboxModule,
-		MatIconModule,
+		// MatCheckboxModule,
+		// MatIconModule,
 		MatProgressSpinnerModule,
-		MatSidenavModule,
-		MatSnackBarModule,
+		// MatSidenavModule,
+		// MatSnackBarModule,
 		MatToolbarModule,
 		NgxEchartsModule,
 		// ApolloModule,
