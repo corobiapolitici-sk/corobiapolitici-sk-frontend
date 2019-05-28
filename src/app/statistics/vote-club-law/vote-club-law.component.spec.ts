@@ -6,7 +6,7 @@ import {
 } from '@angular/core/testing'
 
 // Load local modules.
-import { VoteClubLawStatisticComponent } from './vote_club_law.component'
+import { VoteClubLawStatisticComponent } from './vote-club-law.component'
 
 describe('StatisticsComponent', () => {
 	let component: VoteClubLawStatisticComponent

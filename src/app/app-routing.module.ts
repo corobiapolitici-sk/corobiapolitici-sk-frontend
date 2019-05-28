@@ -10,7 +10,7 @@ import {
 // import { ClubsComponent } from './pages/clubs/clubs.component'
 import { HomeComponent } from './pages/home/home.component'
 import { InfoComponent } from './pages/info/info.component'
-import { LawCreationComponent } from './pages/law_creation/law_creation.component'
+import { LawCreationComponent } from './pages/law-creation/law-creation.component'
 import { LawsComponent } from './pages/laws/laws.component'
 // import { PoliticianComponent } from './pages/politician/politician.component'
 import { PoliticiansComponent } from './pages/politicians/politicians.component'
