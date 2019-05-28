@@ -25,7 +25,6 @@ import {
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss'],
 })
-
 export class AppComponent implements OnInit {
 	// constructor(
 	// 	private apollo: Apollo

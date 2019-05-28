@@ -46,24 +46,25 @@ import { TextComponent } from './atoms/text/text.component'
 
 // Load angular molecule component modules.
 import { CardWithIconComponent } from './molecules/card-with-icon/card-with-icon.component'
-import { Statistics1Component } from './molecules/statistics1/statistics1.component'
-import { Statistics2Component } from './molecules/statistics2/statistics2.component'
-import { Statistics3Component } from './molecules/statistics3/statistics3.component'
+import { FooterComponent } from './molecules/footer/footer.component'
+import { HeaderComponent } from './molecules/header/header.component'
+// import { PoliticianListItemComponent } from './molecules/politician-list-item/politician-list-item.component'
 
-// Load angular organism component modules.
-import { HeaderComponent } from './organisms/header/header.component'
-import { NavLinksComponent } from './organisms/nav-links/nav-links.component'
-// import { PoliticianListItemComponent } from './organisms/politician-list-item/politician-list-item.component'
+// Load angular statistic component modules.
+import { TimeSpeakClubStatisticComponent } from './statistics/time_speak_club/time_speak_club.component' // 3
+import { TopTimeSpeakClubLawStatisticComponent } from './statistics/top_time_speak_club_law/top_time_speak_club_law.component' // 2
+import { VoteClubLawStatisticComponent } from './statistics/vote_club_law/vote_club_law.component' // 1
 
 // Load angular page component modules.
 // import { ClubComponent } from './pages/club/club.component'
 // import { ClubsComponent } from './pages/clubs/clubs.component'
-// import { ContactComponent } from './pages/contact/contact.component'
 import { HomeComponent } from './pages/home/home.component'
+import { InfoComponent } from './pages/info/info.component'
+import { LawCreationComponent } from './pages/law_creation/law_creation.component'
 import { LawsComponent } from './pages/laws/laws.component'
-// import { InfoComponent } from './pages/info/info.component'
 // import { PoliticianComponent } from './pages/politician/politician.component'
-// import { PoliticiansComponent } from './pages/politicians/politicians.component'
+import { PoliticiansComponent } from './pages/politicians/politicians.component'
+import { StatisticsComponent } from './pages/statistics/statistics.component'
 
 @NgModule({
 	declarations: [
@@ -82,22 +83,23 @@ import { LawsComponent } from './pages/laws/laws.component'
 		TextComponent,
 		// Molecules.
 		CardWithIconComponent,
-		Statistics1Component,
-		Statistics2Component,
-		Statistics3Component,
-		// Organisms.
+		FooterComponent,
 		HeaderComponent,
-		NavLinksComponent,
 		// PoliticianListItemComponent,
+		// Statistics.
+		VoteClubLawStatisticComponent,
+		TopTimeSpeakClubLawStatisticComponent,
+		TimeSpeakClubStatisticComponent,
 		// Pages.
 		// ClubComponent,
 		// ClubsComponent,
-		// ContactComponent,
 		HomeComponent,
-		// InfoComponent,
+		InfoComponent,
+		LawCreationComponent,
 		LawsComponent,
 		// PoliticianComponent,
-		// PoliticiansComponent,
+		PoliticiansComponent,
+		StatisticsComponent,
 	],
 	imports: [
 		AppRoutingModule,
@@ -129,5 +131,4 @@ import { LawsComponent } from './pages/laws/laws.component'
 	// }],
 	bootstrap: [AppComponent],
 })
-
 export class AppModule {}

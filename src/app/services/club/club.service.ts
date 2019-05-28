@@ -7,17 +7,17 @@ import { Observable } from 'rxjs'
 
 // Load local modules.
 import { environment } from '../../../environments/environment'
-import { Committee } from '../../definitions/committee'
+import { Club } from '../../definitions/club'
 
 @Injectable({ providedIn: 'root' })
-export class CommitteeService {
-	private url = ((environment.production) ? '' : 'http://localhost/') + 'preprocessed/data/vybor.json'
+export class ClubService {
+	private url = ((environment.production) ? '' : 'http://localhost/') + 'preprocessed/data/klub.json'
 
 	constructor(
 		private http: HttpClient,
 	) {}
 
-	getAll(): Observable<Committee[]> {
-		return this.http.get<Committee[]>(this.url)
+	getAll(): Observable<Club[]> {
+		return this.http.get<Club[]>(this.url)
 	}
 }

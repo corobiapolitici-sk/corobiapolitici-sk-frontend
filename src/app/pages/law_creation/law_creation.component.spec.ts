@@ -6,22 +6,22 @@ import {
 } from '@angular/core/testing'
 
 // Load local modules.
-import { Statistics1Component } from './statistics1.component'
+import { LawCreationComponent } from './law_creation.component'
 
-describe('StatisticsComponent', () => {
-	let component: Statistics1Component
-	let fixture: ComponentFixture<Statistics1Component>
+describe('LawCreationComponent', () => {
+	let component: LawCreationComponent
+	let fixture: ComponentFixture<LawCreationComponent>
 
 	beforeEach(async(() => {
 		TestBed
 			.configureTestingModule({
-				declarations: [Statistics1Component],
+				declarations: [LawCreationComponent],
 			})
 			.compileComponents()
 	}))
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(Statistics1Component)
+		fixture = TestBed.createComponent(LawCreationComponent)
 		component = fixture.componentInstance
 		fixture.detectChanges()
 	})

@@ -6,22 +6,22 @@ import {
 } from '@angular/core/testing'
 
 // Load local modules.
-import { Statistics2Component } from './statistics2.component'
+import { TimeSpeakClubStatisticComponent } from './time_speak_club.component'
 
 describe('StatisticsComponent', () => {
-	let component: Statistics2Component
-	let fixture: ComponentFixture<Statistics2Component>
+	let component: TimeSpeakClubStatisticComponent
+	let fixture: ComponentFixture<TimeSpeakClubStatisticComponent>
 
 	beforeEach(async(() => {
 		TestBed
 			.configureTestingModule({
-				declarations: [Statistics2Component],
+				declarations: [TimeSpeakClubStatisticComponent],
 			})
 			.compileComponents()
 	}))
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(Statistics2Component)
+		fixture = TestBed.createComponent(TimeSpeakClubStatisticComponent)
 		component = fixture.componentInstance
 		fixture.detectChanges()
 	})

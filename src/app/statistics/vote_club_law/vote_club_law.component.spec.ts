@@ -6,22 +6,22 @@ import {
 } from '@angular/core/testing'
 
 // Load local modules.
-import { NavLinksComponent } from './nav-links.component'
+import { VoteClubLawStatisticComponent } from './vote_club_law.component'
 
-describe('NavLinksComponent', () => {
-	let component: NavLinksComponent
-	let fixture: ComponentFixture<NavLinksComponent>
+describe('StatisticsComponent', () => {
+	let component: VoteClubLawStatisticComponent
+	let fixture: ComponentFixture<VoteClubLawStatisticComponent>
 
 	beforeEach(async(() => {
 		TestBed
 			.configureTestingModule({
-				declarations: [NavLinksComponent],
+				declarations: [VoteClubLawStatisticComponent],
 			})
 			.compileComponents()
 	}))
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(NavLinksComponent)
+		fixture = TestBed.createComponent(VoteClubLawStatisticComponent)
 		component = fixture.componentInstance
 		fixture.detectChanges()
 	})

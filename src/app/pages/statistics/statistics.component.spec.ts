@@ -6,22 +6,22 @@ import {
 } from '@angular/core/testing'
 
 // Load local modules.
-import { Statistics3Component } from './statistics3.component'
+import { StatisticsComponent } from './statistics.component'
 
 describe('StatisticsComponent', () => {
-	let component: Statistics3Component
-	let fixture: ComponentFixture<Statistics3Component>
+	let component: StatisticsComponent
+	let fixture: ComponentFixture<StatisticsComponent>
 
 	beforeEach(async(() => {
 		TestBed
 			.configureTestingModule({
-				declarations: [Statistics3Component],
+				declarations: [StatisticsComponent]
 			})
 			.compileComponents()
 	}))
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(Statistics3Component)
+		fixture = TestBed.createComponent(StatisticsComponent)
 		component = fixture.componentInstance
 		fixture.detectChanges()
 	})
