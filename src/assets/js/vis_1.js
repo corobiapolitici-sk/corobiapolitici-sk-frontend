@@ -1,9 +1,9 @@
 var visualization1Colors = {
-  "Nehlasoval/a":'#66b0ff',
-  "Neprítomný/á":'#a78bda',
-  "Proti":'#ff6a4d',
-  "Za": '#5bd778',
-  "Zdržal/a sa":'#ffd24d'
+	"Nehlasoval/a":'#66b0ff',
+	"Neprítomný/á":'#a78bda',
+	"Proti":'#ff6a4d',
+	"Za": '#5bd778',
+	"Zdržal/a sa":'#ffd24d'
 };
 
 function visualizationUpdate1A (data, selection) {
@@ -13,11 +13,11 @@ function visualizationUpdate1A (data, selection) {
 		title : {
 			text: 'koaličné zákony',
 			x: 'center',
-      textStyle: {
-        color: 'white',
-        fontFamily: 'QuarcaRegular',
-        fontSize: 18
-      }
+			textStyle: {
+				color: 'white',
+				fontFamily: 'QuarcaRegular',
+				fontSize: 18
+			}
 		},
 		tooltip: {
 			trigger: 'item',
@@ -30,14 +30,14 @@ function visualizationUpdate1A (data, selection) {
 			data: Object.keys(item).map(function (key) {
 				return {
 					value: item[key],
-          name: key,
-          label: {
-            fontFamily: 'QuarcaRegular',
-            fontSize: 13
-          },
-          itemStyle: {
-            color: visualization1Colors[key]
-          }
+					name: key,
+					label: {
+						fontFamily: 'QuarcaRegular',
+						fontSize: 13
+					},
+					itemStyle: {
+						color: visualization1Colors[key]
+					}
 				};
 			})
 		}]
@@ -51,11 +51,11 @@ function visualizationUpdate1B (data, selection) {
 		title : {
 			text: 'opozičné zákony',
 			x:'center',
-      textStyle: {
-        color: 'white',
-        fontFamily: 'QuarcaRegular',
-        fontSize: 18
-      }
+			textStyle: {
+				color: 'white',
+				fontFamily: 'QuarcaRegular',
+				fontSize: 18
+			}
 		},
 		tooltip: {
 			trigger: 'item',
@@ -69,13 +69,13 @@ function visualizationUpdate1B (data, selection) {
 				return {
 					value: item[key],
 					name: key,
-          label: {
-            fontFamily: 'QuarcaRegular',
-            fontSize: 13
-          },
-          itemStyle: {
-            color: visualization1Colors[key]
-          }
+					label: {
+						fontFamily: 'QuarcaRegular',
+						fontSize: 13
+					},
+					itemStyle: {
+						color: visualization1Colors[key]
+					}
 				}
 			})
 		}]

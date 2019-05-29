@@ -2,22 +2,38 @@
 	width: 100%;
 }
 
+.select-container {
+	width: 300px;
+	margin: 0 auto;
+}
+
+.link-container {
+	margin-top: 5px;
+}
+
+.link-container a {
+	font-family: QuarcaRegular;
+	color: #00a9a6;
+}
+
 @media(max-width: 480px) {
-	#vis-3-a, #vis-3-b {
+	.chart-a,
+	.chart-b {
 		width: 95%;
 		height: 300px;
 	}
 }
 
 @media(min-width: 480px) {
-	#vis-3-a, #vis-3-b {
+	.chart-a,
+	.chart-b {
 		width: 48%;
 		height: 550px;
 	}
-	#vis-3-a {
+	.chart-a {
 		float: left;
 	}
-	#vis-3-b {
+	.chart-b {
 		float: right;
 	}
 }

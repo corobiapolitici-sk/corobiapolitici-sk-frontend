@@ -1,6 +1,6 @@
 export class Law {
 	_id: string
-	datumDorucenia: number
+	datumDorucenia: string
 	druh: string
 	id: number
 	nazov: string
