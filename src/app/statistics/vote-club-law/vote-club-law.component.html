@@ -1,4 +1,7 @@
-<div class="container">
+<div
+	class="container"
+	(window:resize)="onResize()"
+>
 	<div class="row">
 		<div class="col-md-12">
 			<app-heading
@@ -6,19 +9,31 @@
 				type="h2"
 				class="col-xs-12"
 			></app-heading>
-			<div class="col-xs-12" style="width: 300px; margin: 0 auto">
-				<app-select id="sel-vis-1" [options]="selectOptions" class="col-xs-12"></app-select>
+			<div class="select-container col-xs-12">
+				<app-select
+					#clubSelect
+					class="col-xs-12"
+					[options]="selectClubOptions"
+					(changeValue)="selectClub($event)"
+				></app-select>
 			</div>
-			<div class="col-xs-12" style="margin-top: 5px">
+			<div class="link-container col-xs-12">
 				<a
-					href="assets/data/vis_1_klub_typ_zakona_hlasovanie.json"
+					href="{{statisticsService.baseUrl}}{{resourceFileName}}"
 					target="_blank"
-					style="font-family: QuarcaRegular; color: #00a9a6"
 				>Stiahnúť podklady</a>
 			</div>
 			<div>
-				<div id="vis-1-a"></div>
-				<div id="vis-1-b"></div>
+				<div
+					echarts
+					class="chart-a"
+					[options]="chartAOptions"
+				></div>
+				<div
+					echarts
+					class="chart-b"
+					[options]="chartBOptions"
+				></div>
 			</div>
 		</div>
 	</div>

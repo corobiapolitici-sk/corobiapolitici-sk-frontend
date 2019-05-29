@@ -1,23 +1,43 @@
+@import 'variables';
+
 :host {
 	width: 100%;
 }
 
+.select-container {
+	width: 300px;
+	margin: 0 auto;
+}
+
+.link-container {
+	margin-top: 5px;
+}
+
+.link-container a {
+	font-family: $font-regular;
+	color: $color-turquoise-regular;
+}
+
 @media(max-width: 480px) {
-	#vis-1-a, #vis-1-b {
+	.chart-a,
+	.chart-b {
 		width: 90%;
 		height: 270px;
 	}
 }
 
 @media(min-width: 480px) {
-	#vis-1-a, #vis-1-b {
+	.chart-a,
+	.chart-b {
 		width: 45%;
 		height: 450px;
 	}
-	#vis-1-a {
+
+	.chart-a {
 		float: left;
 	}
-	#vis-1-b {
+
+	.chart-b {
 		float: right;
 	}
 }

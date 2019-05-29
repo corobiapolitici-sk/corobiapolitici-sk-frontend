@@ -1,6 +1,6 @@
 <div
 	class="container"
-	(window:resize)="onResize($event)"
+	(window:resize)="onResize()"
 >
 	<div class="row">
 		<div class="col-md-12">
@@ -14,7 +14,7 @@
 					#clubSelect
 					class="col-xs-12"
 					[options]="selectClubOptions"
-					(change)="selectClub(clubSelect.value)"
+					(changeValue)="selectClub($event)"
 				></app-select>
 			</div>
 			<div class="link-container col-xs-12">
@@ -26,13 +26,14 @@
 			<div>
 				<div
 					echarts
-					[options]="chartAOptions"
 					class="chart-a"
+					[options]="chartAOptions"
 				></div>
 				<div
 					echarts
-					[options]="chartBOptions"
 					class="chart-b"
+					[options]="chartBOptions"
+					(chartClick)="chartBClick($event)"
 				></div>
 			</div>
 		</div>

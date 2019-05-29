@@ -12,13 +12,13 @@ import {
 	styleUrls: ['./select.component.scss'],
 })
 export class SelectComponent {
-	@Input() options: Array<{
-		option: string,
+	@Input() options: {
 		name: string,
-	}>
-	@Output() change = new EventEmitter<string>()
+		value: string,
+	}[]
+	@Output() changeValue = new EventEmitter<string>()
 
 	onChange(value: string) {
-		this.change.emit(value)
+		this.changeValue.emit(value)
 	}
 }

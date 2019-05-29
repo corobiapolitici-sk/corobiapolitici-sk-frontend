@@ -1,6 +1,7 @@
 // Load angular modules.
 import {
 	Component,
+	HostListener,
 	OnInit,
 } from '@angular/core'
 
@@ -16,13 +17,16 @@ import { StatisticsService } from '../../services/statistics/statistics.service'
 	styleUrls: ['./time-speak-club.component.scss'],
 })
 export class TimeSpeakClubStatisticComponent implements OnInit {
-	/preprocessed/data/statistics/
-	resourceFileName: string = 'klub_poslanec_cas.json'
+	resourceFileName = 'klub_poslanec_cas.json'
 
-	selectClubOptions: string[] = []
+	data: object
+	selectClubOptions: {
+		name: string,
+		value: string,
+	}[] = []
+	selectedClub: string
 
 	chartAOptions: EChartOption = {}
-
 	chartBOptions: EChartOption = {}
 
 	constructor(
@@ -30,28 +34,46 @@ export class TimeSpeakClubStatisticComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		this.statisticsService.get(resourceFileName).subscribe((data) => {
-			// TODO
+		this.statisticsService.get(this.resourceFileName).subscribe((data) => {
+			this.data = data
+			this.selectClubOptions = Object.keys(data).map((club) => {
+				return {
+					name: club,
+					value: club,
+				}
+			})
+			this.selectedClub = this.selectClubOptions[0].value
+
+			this.updateChartOptions()
 		})
 	}
 
-	selectClub(
-		clubName: string,
-	): void {
-
+	@HostListener('window:resize', ['$event'])
+	onResize(): void {
+		this.updateChartOptions()
 	}
 
-	visualizationUpdate3A(
-		data,
-		selection
-	) {
-		var item = data[selection]
+	selectClub(
+		value: string,
+	): void {
+		this.selectedClub = value
+		this.updateChartOptions()
+	}
 
-		return {
-			color: '#00a9a6',
+	chartBClick(
+		$event: any,
+	): void {
+		this.selectedClub = $event.data.name
+		this.updateChartOptions()
+	}
+
+	updateChartOptions(): void {
+		const itemA = this.data[this.selectedClub]
+
+		this.chartAOptions = {
+			color: ['#00a9a6'],
 			title: {
-				text: 'poslanecký klub: ' + selection,
-				x: 'center',
+				text: 'poslanecký klub: ' + this.selectedClub,
 				textStyle: {
 					color: 'white',
 					fontFamily: 'QuarcaRegular',
@@ -64,17 +86,17 @@ export class TimeSpeakClubStatisticComponent implements OnInit {
 			},
 			tooltip: {
 				trigger: 'item',
-				formatter: '{b} : {c} minút',
+				formatter: '{b}: <b>{c}</b> minút',
 			},
 			xAxis: {
-				name: 'Poslanci klubu ' + selection,
+				name: 'Poslanci klubu ' + this.selectedClub,
 				nameLocation: 'center',
 				nameTextStyle: {
 					fontFamily: 'QuarcaRegular',
 					fontSize: 16,
 					fontWeight: 'bold',
 				},
-				data: Object.keys(item).reverse().map(() => {
+				data: Object.keys(itemA).reverse().map(() => {
 					return ''
 				}),
 				axisLine: {
@@ -99,46 +121,42 @@ export class TimeSpeakClubStatisticComponent implements OnInit {
 				},
 			},
 			series: [{
-				name: 'poslanecký klub: ' + selection,
+				name: 'poslanecký klub: ' + this.selectedClub,
 				type: 'bar',
-				data: Object.keys(item).reverse().map((key) => {
+				data: Object.keys(itemA).reverse().map((key) => {
 					return {
-						value: item[key],
+						value: itemA[key],
 						name: key,
 					}
 				}),
 			}],
 		}
-	}
-	visualizationUpdate3B(
-		data,
-		selection
-	) {
-		var item = {};
-		Object.keys(data).forEach(function (key) {
-			item[key] = Object.keys(data[key]).reduce(function (acc, name) {
-				return acc + data[key][name]
-			}, 0)
-		});
+		this.chartAOptions.title['x'] = 'center'
 
-		return {
-			color: '#00a9a6',
+		const itemB = {}
+		Object.keys(this.data).forEach((key) => {
+			itemB[key] = Object.keys(this.data[key]).reduce((acc, name) => {
+				return acc + this.data[key][name]
+			}, 0)
+		})
+
+		this.chartBOptions = {
+			color: ['#00a9a6'],
 			title: {
 				text: 'všetky poslanecké kluby',
-				x: 'center',
 				textStyle: {
 					color: 'white',
 					fontFamily: 'QuarcaRegular',
-					fontSize: 20
-				}
+					fontSize: 20,
+				},
 			},
 			grid: {
 				right: '0%',
-				left: '18%'
+				left: '18%',
 			},
 			tooltip: {
 				trigger: 'item',
-				formatter: "{b} : {c} minút"
+				formatter: '{b}: <b>{c}</b> minút',
 			},
 			xAxis: {
 				name: 'Poslanecké kluby',
@@ -146,16 +164,16 @@ export class TimeSpeakClubStatisticComponent implements OnInit {
 				nameTextStyle: {
 					fontFamily: 'QuarcaRegular',
 					fontSize: 16,
-					fontWeight: 'bold'
+					fontWeight: 'bold',
 				},
-				data: Object.keys(item).map(function () {
+				data: Object.keys(itemB).map(() => {
 					return ''
 				}),
 				axisLine: {
 					lineStyle: {
-						color: 'white'
-					}
-				}
+						color: 'white',
+					},
+				},
 			},
 			yAxis: {
 				name: 'Celkový počet minút',
@@ -164,32 +182,34 @@ export class TimeSpeakClubStatisticComponent implements OnInit {
 				nameTextStyle: {
 					fontFamily: 'QuarcaRegular',
 					fontSize: 16,
-					fontWeight: 'bold'
+					fontWeight: 'bold',
 				},
 				axisLine: {
 					lineStyle: {
-						color: 'white'
-					}
-				}
+						color: 'white',
+					},
+				},
 			},
 			series: [{
 				name: 'všetky poslanecké kluby',
 				type: 'bar',
-				data: Object.keys(item).map(function (key) {
-					var result = {
-						value: item[key],
-						name: key
-					};
-
-					if (selection === key) {
-						result.itemStyle = {
-							color: 'white'
-						};
+				data: Object.keys(itemB).map((key) => {
+					const result = {
+						value: itemB[key],
+						name: key,
+						itemStyle: {
+							color: 'white',
+						},
 					}
 
-					return result;
-				})
-			}]
-		};
+					if (this.selectedClub !== key) {
+						delete result.itemStyle
+					}
+
+					return result
+				}),
+			}],
+		}
+		this.chartBOptions.title['x'] = 'center'
 	}
 }

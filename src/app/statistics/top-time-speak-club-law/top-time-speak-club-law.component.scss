@@ -1,25 +1,31 @@
+@import 'variables';
+
 :host {
 	width: 100%;
 }
 
+.link-container a {
+	font-family: $font-regular;
+	color: $color-turquoise-regular;
+}
+
 @media(max-width: 480px) {
-	#vis-2 {
+	.g-2-wrapper {
+		width: 300px;
+		overflow-x: scroll;
+		display: inline-block;
+	}
+	.g-2-wrapper > div {
 		/*
 		height: 400px;
 		width: 700px;
 		*/
 		display: inline;
 	}
-
-	.g-2-wrapper {
-		width: 300px;
-		overflow-x: scroll;
-		display: inline-block;
-	}
 }
 
 @media(min-width: 480px) {
-	#vis-2 {
+	.g-2-wrapper > div {
 		height: 400px;
 	}
 }
