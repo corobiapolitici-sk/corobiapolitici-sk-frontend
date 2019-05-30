@@ -15,6 +15,7 @@ export class SelectComponent {
 	@Input() options: {
 		name: string,
 		value: string,
+		selected: boolean,
 	}[]
 	@Output() changeValue = new EventEmitter<string>()
 

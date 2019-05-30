@@ -31,6 +31,7 @@ export class VoteClubLawStatisticComponent implements OnInit {
 	selectClubOptions: {
 		name: string,
 		value: string,
+		selected: boolean,
 	}[] = []
 	selectedClub: string
 
@@ -38,7 +39,7 @@ export class VoteClubLawStatisticComponent implements OnInit {
 	chartBOptions: EChartOption = {}
 
 	constructor(
-		private statisticsService: StatisticsService,
+		public statisticsService: StatisticsService,
 	) {}
 
 	ngOnInit(): void {
@@ -48,8 +49,10 @@ export class VoteClubLawStatisticComponent implements OnInit {
 				return {
 					name: club,
 					value: club,
+					selected: false,
 				}
 			})
+			this.selectClubOptions[0].selected = true
 			this.selectedClub = this.selectClubOptions[0].value
 
 			this.updateChartOptions()

@@ -1,0 +1,68 @@
+@import 'variables';
+
+.main-background {
+	background: url('../../../assets/img/info_hero.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.mission {
+	text-align: center;
+	font-family: $font-regular;
+	color: $color-gray;
+	font-size: 18pt;
+}
+
+@media(max-width: 480px) {
+	.main-background {
+		background-position: bottom;
+	}
+
+	.mission {
+		margin-bottom: 50px;
+	}
+}
+
+@media(min-width: 480px) {
+	.main-background {
+		background-position: center center;
+		min-height: 50vh;
+	}
+
+	.curtains {
+		min-height: 50vh;
+	}
+
+	.mission {
+		margin-bottom: 150px;
+	}
+}
+
+.curtains {
+	background: white;
+	opacity: 0.8;
+	margin-left: 30px;
+	margin-right: 30px;
+	padding-left: 14px;
+	padding-right: 14px;
+	width: 100%;
+}
+
+app-section-gray {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+app-text {
+	font-size: 14pt;
+	text-align: left;
+}
+
+app-heading {
+	display: block;
+	width: 100%;
+}
+
+app-text a {
+	color: lighten($color-turquoise-regular, 5%);
+}

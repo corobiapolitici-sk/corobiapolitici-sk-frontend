@@ -13,7 +13,7 @@ import { InfoComponent } from './pages/info/info.component'
 import { LawCreationComponent } from './pages/law-creation/law-creation.component'
 import { LawsComponent } from './pages/laws/laws.component'
 // import { PoliticianComponent } from './pages/politician/politician.component'
-import { PoliticiansComponent } from './pages/politicians/politicians.component'
+// import { PoliticiansComponent } from './pages/politicians/politicians.component'
 import { StatisticsComponent } from './pages/statistics/statistics.component'
 
 const routes: Routes = [{
@@ -40,10 +40,10 @@ const routes: Routes = [{
 }, {
 	path: 'laws',
 	component: LawsComponent,
+/*
 }, {
 	path: 'politicians',
 	component: PoliticiansComponent,
-/*
 }, {
 	path: 'politicians/:id',
 	component: PoliticianComponent,

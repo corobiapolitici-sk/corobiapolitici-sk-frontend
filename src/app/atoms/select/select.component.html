@@ -2,5 +2,6 @@
 	<option
 		*ngFor="let option of options"
 		value="{{option.value}}"
+		[attr.selected]="option.selected === true ? 'selected' : null"
 	>{{option.name}}</option>
 </select>

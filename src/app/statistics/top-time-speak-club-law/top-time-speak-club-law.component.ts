@@ -24,7 +24,7 @@ export class TopTimeSpeakClubLawStatisticComponent implements OnInit {
 	chartOptions: EChartOption = {}
 
 	constructor(
-		private statisticsService: StatisticsService,
+		public statisticsService: StatisticsService,
 	) {}
 
 	ngOnInit(): void {

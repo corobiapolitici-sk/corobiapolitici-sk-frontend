@@ -1,7 +1,7 @@
 @import 'variables';
 
 .main-background {
-	background: url('../../../assets/img/narodna_rada3.jpg');
+	background: url('../../../assets/img/home_hero.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -17,6 +17,7 @@
 	.main-background {
 		background-position: bottom;
 	}
+
 	.mission {
 		margin-bottom: 50px;
 	}
@@ -27,9 +28,11 @@
 		background-position: center center;
 		min-height: 50vh;
 	}
+
 	.curtains {
 		min-height: 50vh;
 	}
+
 	.mission {
 		margin-bottom: 150px;
 	}
@@ -49,4 +52,41 @@
 	margin-bottom: 35px;
 	width: 100%;
 	display: inline-block;
+}
+
+.project-vision {
+	padding-bottom: 30px;
+}
+
+.project-vision > app-heading {
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.project-vision > div > app-text {
+	text-align:center;
+	font-size: 1.5em;
+}
+
+.example-statistics > app-heading {
+	width: 100%;
+	text-align: center;
+}
+
+.example-statistics > app-vote-club-law-statistic,
+.example-statistics > app-top-time-speak-club-law-statistic,
+.example-statistics > app-time-speak-club-statistic {
+	margin-top: 50px;
+}
+
+.example-statistics > app-text {
+	text-align:center;
+	font-size: 1.1em;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.example-statistics > app-text a {
+	color: $color-turquoise-regular;
 }
